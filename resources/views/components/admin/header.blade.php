@@ -18,7 +18,7 @@
             <!-- Links -->
             <div class="hidden md:flex items-center gap-6 text-sm text-black/90">
 
-                <a href="https://larongresort.com" target="_blank" class="text-black transition font-medium">
+                <a href="https://bhuiyanbarimasjid.bd" target="_blank" class="text-black transition font-medium">
                     Main Site
                 </a>
 

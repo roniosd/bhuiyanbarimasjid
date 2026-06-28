@@ -10,6 +10,7 @@ use App\Models\Album;
 use App\Models\Collector;
 use App\Models\Committee;
 use App\Models\Event;
+use App\Models\HomepageSetting;
 use App\Models\Member;
 use App\Models\Page;
 use App\Models\Post;
@@ -76,6 +77,8 @@ class FrontPageController extends Controller
       $events = Event::where('status', 'published')
          ->paginate(6);
 
+      $homepageSetting = HomepageSetting::first();
+
 
       $activities = Activities::where('status', 'published')
          ->latest('updated_at')
@@ -110,7 +113,8 @@ class FrontPageController extends Controller
          'activities',
          'news',
          'albums',
-         'events'
+         'events',
+         'homepageSetting'
       ));
    }
 
