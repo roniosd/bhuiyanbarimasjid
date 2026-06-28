@@ -61,8 +61,7 @@
 
                                             $selected = json_decode($homepageSetting->sections, true) ?? [];
                                         @endphp
-                                        @dd($selected)
-
+                                      
                                         <div class="row">
                                             @foreach ($allSections as $section)
                                                 <div class="col-md-2 mb-2">
