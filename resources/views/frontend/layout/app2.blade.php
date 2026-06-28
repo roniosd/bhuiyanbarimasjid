@@ -49,7 +49,7 @@
     <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/BhuiyanbariNew/public/front/css/style.css">
+    <link rel="stylesheet" href="/public/front/css/style.css">
 </head>
 
 <body>
@@ -63,7 +63,7 @@
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="/BhuiyanbariNew/public/front/js/main.js"></script>
+    <script src="/public/front/js/main.js"></script>
 
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
