@@ -7,7 +7,7 @@
                 <div class="col-md-3">
                     <div class="card text-white bg-success shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Totals Donations</h5>
+                            <h5 class="card-title">Total22222 Donations</h5>
                             <p class="card-text fs-4">৳ 120,450</p>
                         </div>
                     </div>
