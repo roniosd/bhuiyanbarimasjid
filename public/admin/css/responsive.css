@@ -1,0 +1,105 @@
+@media only screen and (min-width: 1441px) and (max-width: 1920px){
+    .container{
+        max-width: 1600px;
+    }
+    .logo{
+        margin-right: 60px;
+    }
+    
+}
+@media only screen and (min-width: 1201px) and (max-width: 1440px){
+    .container{
+        max-width: 1140px;
+    }
+    .header-middle {
+        justify-content: center;
+    }
+    .fa-bars {
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    .menu li a{
+        font-size: 15px;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px){
+    
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .header-middle{
+        display: none;
+    }
+    .header-middle-top{
+        display: none;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px){
+    
+}
+@media only screen and (max-width: 767px){
+    .header-middle{
+        display: none;
+    }
+    .header-middle-top{
+        display: none;
+    }
+    
+}
+@media only screen and (min-width: 480px) and (max-width: 576px){
+    .mini-profile{
+        display: none;
+    }
+    .notification{
+        margin-right: 20px;
+    }
+    .sidebar{
+        width: 0;
+        padding: 0;
+    }
+    .content-area{
+        padding: 0;
+    }
+    .content-inner{
+        padding: 15px 10px;
+    }
+    .custom-card-header{
+        display: block;
+    }
+    .custom-card-header .heading{
+        margin-bottom: 10px;
+    }
+    .sidebar:hover{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px){
+  .mini-profile{
+      display: none;
+  }  
+  .notification{
+      margin-right: 20px;
+  }
+  .sidebar{
+      width: 0;
+      padding: 0;
+  }
+  .content-area{
+      padding: 0;
+  }
+  .content-inner{
+      padding: 15px 10px;
+  }
+  .custom-card-header{
+      display: block;
+  }
+  .custom-card-header .heading{
+      margin-bottom: 10px;
+  }
+  .sidebar:hover{
+      width: 100%;
+  }
+}
+/*
+@media only screen and (min-width: 375px) and (max-width: 399px){}
+@media only screen and (min-width: 320px) and (max-width: 374px){}
+*/

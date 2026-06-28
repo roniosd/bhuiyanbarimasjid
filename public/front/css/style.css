@@ -1,0 +1,1922 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap");
+
+@font-face {
+    font-family: "Noto Serif Bengali";
+    font-weight: normal;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Noto Serif Bengali", sans-serif;
+}
+
+/* Base Design */
+.about_section .row img,
+.news_section .row .col .card img,
+.activity_section .card img,
+.about_box_section .card img,
+.ocation-section .card img,
+.img_gallary-section .grid-container-all .grid-containers img,
+.activity-box-sec .card .about_as_img {
+    border-radius: 8px;
+    --f: 1.15;
+    clip-path: inset(0);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.contact_section .row img {
+    transition: all 0.3s ease;
+}
+.contact_section .row img:hover {
+    transform: scale(1.1);
+}
+
+.about_section .row img:hover,
+.news_section .row .col .card img:hover,
+.activity_section .card img:hover,
+.about_box_section .card img:hover,
+.img_gallary-section .grid-container-all .grid-containers img:hover,
+.ocation-section .card img:hover,
+.activity-box-sec .card .about_as_img:hover {
+    clip-path: inset(calc((1 - 1 / var(--f)) * 50%));
+    scale: var(--f);
+}
+
+/* header */
+.logo_container img {
+    cursor: pointer;
+    height: 110px;
+}
+.header_bnts .btn,
+.hero-box .row .btns {
+    padding: 10px 16px;
+    border-radius: 6px;
+    background: #22587a;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s ease;
+    z-index: 1;
+}
+
+.btn-sub {
+    padding: 15px 16px;
+    background: #22587a;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s ease;
+    z-index: 1;
+}
+.donate-btnSection button::before,
+.btn-sub::before,
+.hero-box .row .btns::before,
+.header_bnts .btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    background: #22587a;
+    transition:
+        left 1.4s ease,
+        right 1s ease;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+.donate-btnSection button::before,
+.btn-sub::before,
+.hero-box .row .btns::before,
+.btn::before {
+    left: -100%;
+}
+
+.btn::before {
+    right: -100%;
+}
+.donate-btnSection button:hover::before,
+.btn-sub.btns:hover::before,
+.hero-box .row .btns:hover::before,
+.btn-1:hover::before {
+    left: 100%;
+}
+
+.btn:hover::before {
+    right: 100%;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+
+/* Paginator */
+.pagination .page-link {
+    color: #036433;
+    background-color: white;
+    border: 1px solid #036433;
+    transition: all 0.3s ease-in-out;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #036433;
+    color: white;
+    border-color: #036433;
+}
+
+.pagination .page-link:hover {
+    background-color: #036433;
+    color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #999;
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+}
+
+.navbar {
+    width: 100%;
+    max-height: 65px;
+    background: #0c736f;
+    padding: 0;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 2px;
+}
+
+/* Change Menu Icon Color */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 3rem;
+    height: 3rem;
+}
+.navbar .navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    border: 1px solid #fff;
+}
+
+.custom-toggler:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.navbar-nav .nav-item .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    z-index: 0;
+}
+.navbar-nav .nav-item {
+    transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-item:hover,
+.navbar-nav .active {
+    background: #0c736f;
+    border-bottom: 2px solid #36a4a6;
+}
+
+.dropdown .dropdown-menu {
+    display: block;
+    background: #0c736f;
+    border-radius: 0px;
+    border: none;
+    border-end-start-radius: 4px;
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background: #22587a;
+    color: #fff;
+}
+
+/* Hover dropdown only on desktop */
+@media (min-width: 1025px) {
+    .navbar-nav .dropdown:hover > .dropdown-menu,
+    .dropend:hover > .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        transform: translateY(0);
+        margin-top: 3px;
+    }
+}
+@media screen and (min-width: 769px) {
+    .dropend:hover > .dropdown-menu {
+        position: absolute;
+        top: -20px;
+        left: 100%;
+    }
+}
+.dropdown-menu {
+    z-index: 1050 !important; /* Ensure it's above other elements */
+    position: absolute !important; /* Make sure it overlays correctly */
+    width: auto; /* Adjust width as needed */
+}
+
+/* Drop down end */
+.logo_container img,
+.org_name {
+    transition: transform 0.3s ease;
+}
+
+.org_name:hover {
+    opacity: 70%;
+}
+
+/* Hero section */
+.hero-box {
+    position: absolute;
+    width: 100%;
+    max-width: 1270px;
+    height: auto;
+    background: #ffffff;
+    border-bottom: 4px solid #36a4a6;
+    box-shadow:
+        0px 4px 8px 0px #0000000f,
+        0px 0px 4px 0px #0000000a;
+    border-radius: 8px;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: 54px auto;
+}
+
+.hero_img img {
+    width: 100%;
+    height: 70vh;
+}
+
+.hero-box .row input,
+.hero-box .row select {
+    height: 44px;
+    border: 1px solid #d9d9d9;
+    color: #5f5f5f;
+}
+.hero-box .row input::placeholder,
+.hero-box .row select {
+    font-size: 20px;
+    font-weight: 400;
+}
+sup {
+    color: red;
+}
+.custom-input,
+.custom-select,
+.form-control {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.hero-box .row .btns {
+    height: 44px;
+    width: 100%;
+    z-index: 100;
+}
+
+/* about */
+
+.about_section {
+    margin-top: 159px;
+}
+.about_section .row img {
+    width: 630px;
+    height: 296px;
+    border-radius: 8px;
+}
+.about_section .row .deteails h1 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: left;
+    color: #22587a;
+    margin-top: 10px;
+}
+
+.about_section .row .deteails p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: justify;
+    margin-top: 24px;
+}
+.about_box_section .links .aboutLink {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40.2px;
+    text-align: left;
+    color: #1e1e1e;
+    border-right: 2px solid #dbdbdb;
+    cursor: pointer;
+    width: 290px;
+    font-family: "Noto Serif Bengali", sans-serif;
+}
+.about_box_section .links .about {
+    font-size: 25px;
+    color: #22587a;
+    font-weight: bold;
+}
+
+.about_box_section .links .aboutLink:hover,
+.links .aboutLink.active {
+    border-right: 3px solid #22587a;
+}
+.links .aboutLink.active a {
+    color: #22587a;
+}
+.btn-3 {
+    transition: all 0.5s linear;
+}
+
+/* donation-section */
+.donation-section {
+    background-color: #e6f9ee;
+    padding-bottom: 44px;
+}
+.custom-header span,
+.header h1,
+.custom-subheading {
+    font-size: 42px;
+    color: #22587a;
+    font-weight: 600;
+    font-family: "Noto Serif Bengali", sans-serif;
+}
+.custom-subheading {
+    font-size: 25px;
+}
+
+.custom-header .see-more a {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: right;
+    color: #737373;
+    text-decoration: none;
+}
+.custom-header .see-more a:hover {
+    color: #22587a;
+    font-weight: 500;
+}
+
+.donation-section .row .card {
+    width: 402px;
+    height: 484px;
+    margin-right: 10px;
+    padding-top: 10px;
+    border: none;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+}
+.donation-section .row .card img {
+    height: 270px;
+}
+
+.donation-section .row .card_button {
+    margin-top: 65px;
+    margin-left: 20px;
+}
+
+/* Donation section  */
+.donation-section .row-1 {
+    margin-bottom: 56px;
+}
+
+.donation-section .row .card h3 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    margin-top: 20px;
+}
+.donation-section .row .card h3 a {
+    color: #22587a;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.donation-section .row .card h3 a:hover {
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.donation-section .row .card p {
+    width: 391px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    max-height: calc(3 * 1.5em);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.donation-section .row .card .donate-btn {
+    width: 253px;
+    height: 44px;
+    padding: 10px 16px;
+    gap: 10px;
+    border-radius: 6px;
+    border: none;
+    background: #22587a;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+    bottom: -20px;
+    left: 70px;
+    z-index: 1;
+}
+.contact_btn {
+    position: relative;
+    z-index: 1;
+}
+
+.donate-btn:before,
+.contact_btn::before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    border-radius: 6px;
+    content: "";
+    background-color: #015c2e;
+    z-index: -1;
+}
+
+.donate-btn:hover,
+.contact_btn:hover {
+    color: white;
+}
+
+.donate-btn:hover:before,
+.contact_btn:hover::before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.donate-btn:active,
+.contact_btn:active {
+    transform: scale(0.9);
+}
+
+.donation-section .row .card span {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 63px;
+    text-align: center;
+    color: #fff1a6;
+    top: 20%;
+    left: 40%;
+}
+
+.activity_section {
+    background: #fff;
+}
+
+/* activity_section */
+.activity_section .card {
+    width: 402px;
+    border-radius: 8px;
+    border: 1px solid #d8d8d8;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.activity_section .card img {
+    height: 238px;
+}
+
+.activity_section .row .card h3 a {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 28.6px;
+    text-align: left;
+    margin-top: 23px;
+    color: #131313;
+    max-height: calc(2 * 1.2em);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+}
+.activity_section .row .card p {
+    width: 375px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    margin: 14px 0 10px 0;
+    max-height: calc(2 * 1.5em);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.activity_section .row .card a {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    color: #ff9800;
+}
+
+.btn-4 {
+    transition: all 0.5s ease;
+}
+.btn-4:hover {
+    display: block;
+    word-spacing: 5rem;
+    text-decoration: none;
+}
+
+/* Banner section */
+
+.banner {
+    margin-bottom: 88px;
+}
+
+.banner img {
+    width: 1267px;
+    height: 316px;
+    border-radius: 8px;
+    margin-top: 86px;
+}
+
+.banner button {
+    width: 187px;
+    position: absolute;
+    top: 70%;
+    left: 43%;
+    color: #22587a;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23.85px;
+    background: #fff;
+    padding: 10px 16px;
+    border: 1px solid #22587a;
+    transition: all ease 0.3s;
+}
+.banner button:hover {
+    background: #22587a;
+    color: #fff;
+    border: none;
+}
+
+.banner .banner_text {
+    position: absolute;
+    top: 39.5%;
+    left: 33%;
+    width: 35%;
+    font-family: "Noto Serif Bengali", sans-serif;
+    text-align: center;
+}
+.banner .banner_text p {
+    font-size: 15px;
+    color: #fff;
+    margin-top: 20px;
+    font-weight: 400px;
+    text-align: center;
+    width: 400px;
+}
+
+.banner .banner_text h4 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff;
+}
+/* ocation-section */
+
+.ocation-section {
+    background: #f5fcf8;
+    padding-top: 10px;
+    min-height: 700px;
+}
+
+.ocation-section .card {
+    border: none;
+    min-height: 500px;
+    background: transparent;
+    transition: all 0.5s linear;
+}
+
+.ocation-section .card img {
+    width: 400px;
+    height: 241px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.about_box_section .card {
+    overflow: hidden;
+}
+
+.ocation-section .card .card_body {
+    width: 374px;
+    background: #ffffff;
+    border-radius: 8px;
+    border-bottom: 2px solid #47be2f;
+    top: 40%;
+    left: 6%;
+    padding: 10px;
+    padding-top: 60px;
+}
+
+.ocation-section .card .date,
+.activity-box-sec .card .date {
+    background: #47be2f;
+    padding: 10px 25px;
+    padding-top: 15px;
+    text-align: center;
+    top: 35%;
+    left: 9%;
+    border-radius: 5px;
+}
+
+.activity-box-sec .card .date {
+    top: 106px;
+    left: 58px;
+    color: #fff;
+}
+
+.ocation-section .card .date h6,
+.activity-box-sec .card .date p {
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.75px;
+    color: #fff;
+}
+.img_gallary .grid-container p {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.ocation-section .card span,
+.activity-box-sec .card span {
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Foto Gallary*/
+.masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-auto-rows: 10px;
+    gap: 45px;
+}
+.item {
+    box-sizing: border-box;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.item h1 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #131313;
+    font-family: "Noto Serif Bengali", sans-serif;
+}
+.item:hover {
+    transform: translateY(-10px);
+}
+.item1,
+.item6 {
+    grid-row: span 6;
+}
+.item2,
+.item5 {
+    grid-row: span 9;
+}
+.item3,
+.item4 {
+    grid-row: span 12;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* News Section */
+.news_section .row .col .card {
+    width: 642.94px;
+    height: 283px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 2px 0px 4px 0px #00000014;
+    box-shadow: 0px 0px 6px 0px #00000005;
+    margin-bottom: 115px;
+}
+
+.news_section-2 .row .col .card {
+    margin-bottom: 24px;
+}
+.news_section .row .col .card .card-body {
+    padding: 15px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.news_section .row .col .card img {
+    width: 265.32px;
+    height: 283px;
+    border-radius: 8px 0px 0px 8px;
+    object-fit: cover;
+}
+
+.news_section .row .col .card .card-body .time-date {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.1px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: #22587a;
+    margin-bottom: 13px;
+}
+
+.news_section .row .col .card .card-body .card-title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28.6px;
+    text-align: left;
+    color: #131313;
+    width: 320px;
+    height: 49px;
+}
+.news_section .row .col .card .card-body .card-text {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    color: #606060;
+    margin-bottom: 41px;
+    margin-top: 16px;
+    width: 320px;
+    height: 84.14px;
+}
+.news_section .row .col .card .card-body .read-more {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    color: #ff9800;
+}
+
+/* contact_section */
+.contact_section .row .col img {
+    width: 620px;
+    height: 558px;
+}
+
+.contact_section .row .col h1 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 46.8px;
+    text-align: left;
+    color: #131313;
+    width: 461px;
+    margin-top: 80px;
+    margin-bottom: 12px;
+}
+
+.contact_section .row .col p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    color: #606060;
+    width: 473px;
+    margin-bottom: 18px;
+}
+
+.contact_section .row .main-body {
+    width: 554px;
+    height: 499px;
+    margin-left: 100px;
+}
+.contact_section .row .main-body .row input {
+    height: 56px;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #dfdfdf;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+.contact_section .row .main-body .row input::placeholder {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20.46px;
+    text-align: left;
+    color: #a9a9a9;
+}
+
+.contact_section .row .main-body .cheakBox input {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #dfdfdf;
+    margin-right: 10px;
+    background: #22587a;
+}
+
+.contact_section .row .main-body .cheakBox label {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    color: #7d7d7d;
+}
+
+.contact_section .row .main-body .cheakBox label span {
+    color: #272727;
+}
+
+/* contact-us */
+.contact-us .row .form-label span {
+    color: red;
+}
+
+.contact-us .row .form-label {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    color: #1e1e1e;
+}
+
+.contact-us .row input {
+    height: 56px;
+}
+.contact-us .row textarea {
+    height: 297px;
+}
+
+.contact-us .row button {
+    background: #22587a;
+    color: #fff;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.2px;
+}
+
+/* footer */
+footer {
+    background: #000;
+    height: 408px;
+    border-top: 12px solid #22587aa6;
+}
+footer .container-box {
+    top: 10%;
+    left: %;
+}
+
+footer .container-box h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+    color: #ffffff;
+}
+
+footer .container-box p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16.56px;
+    text-align: left;
+    color: #adadad;
+}
+
+.container-box img {
+    width: 406px;
+    height: 97px;
+    transition: all 0.4s linear;
+}
+.container-box img:hover {
+    opacity: 40%;
+}
+.container-box p span {
+    color: #ffffff;
+}
+.container-box .email-box {
+    margin-top: 55px;
+}
+.container-box .link-section {
+    margin-left: 50px;
+    margin-right: 84px;
+    width: 150px;
+}
+.container-box .link-section a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 38.56px;
+    text-align: left;
+    color: #adadad;
+    text-decoration: none;
+}
+.container-box .link-section a:hover,
+.container-box .social_link i:hover {
+    color: #22587a;
+    margin-left: 3px;
+}
+.container-box .social_link {
+    width: 280px;
+}
+
+.container-box .social_link i {
+    margin-right: 3px;
+    color: #ffffff;
+}
+
+footer .copyright {
+    background: #000;
+    height: 90px;
+}
+
+.copyright p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26.5px;
+    color: #ffffff;
+    padding-top: 40px;
+}
+.copyright p:hover {
+    color: #22587a;
+}
+
+/* About section */
+.top_header {
+    background: #03673c;
+    height: 100px;
+}
+.top_header p {
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 63px;
+    text-align: center;
+    color: #d4ffea;
+    padding-top: 20px;
+    text-decoration: none;
+    font-family: "Noto Serif Bengali", sans-serif;
+}
+.beforeEffect {
+    margin-left: 90px;
+    height: 397px;
+    border: 1px solid #dbdbdb;
+    position: relative;
+}
+.beforeEffect::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 28px;
+    background: #22587a;
+    top: 10px;
+    left: -1px;
+}
+
+.about_box_section .links .heder {
+    color: #22587a;
+}
+.about_box_section .links a {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40.2px;
+    text-align: left;
+    color: #1e1e1e;
+    text-decoration: none;
+    font-family: "Noto Serif Bengali", sans-serif;
+}
+.about_box_section .links a:hover {
+    color: #22587a;
+}
+
+.about_box_section .card {
+    padding-top: 10px;
+    background: #ffffff;
+    box-shadow: 0px 4px 8px 0px #0000000f;
+    box-shadow: 0px 0px 4px 0px #0000000a;
+}
+.about_box_section .card p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.about_box_section .card p span {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.container .heading span {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: "Noto Serif Bengali", sans-serif;
+    color: #22587a;
+}
+.container .heading {
+    height: 42px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 8px;
+    background: #22587a0f;
+    margin-bottom: 34px;
+}
+
+.ocation-section-2 {
+    min-height: 80vh;
+    max-height: calc(2000 * 20px);
+    /* height: 2000px; */
+}
+
+.activity-box-sec .card h1,
+.card-title {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 44.2px;
+    text-align: left;
+    color: #131313;
+}
+
+.activity-box-sec .card h5 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    color: #717171;
+    margin-bottom: 17px;
+}
+
+.activity-box-sec p span {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    color: #2b2b2b;
+}
+
+.donation-details .card p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+}
+.donation-details .card p span {
+    font-weight: 600;
+}
+
+/* .Membership_information_section */
+.Member_information_section .box {
+    border-radius: 8px;
+    border: 1px solid #d8d8d8;
+    padding: 23px 38px 50px 58px;
+}
+.Member_information_section .box-2 {
+    padding-left: 32px;
+}
+.Member_information_section .box h5 {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    text-align: left;
+    color: #22587a;
+}
+.Member_information_section .box p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    color: #2b2b2b;
+}
+.Member_information_section .box p a {
+    color: #ff9800;
+    font-weight: 500;
+}
+
+.Member_information_section .highlight {
+    background: #f2faf0;
+    border: 1px solid #47be2f;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 10px;
+    margin-top: 11px;
+}
+.Member_information_section .highlight .row div {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+}
+.Member_information_section .Do_call {
+    height: 63px;
+    border-radius: 8px;
+    border: 1px solid #36a4a6;
+    background: #faf9f0;
+    padding: 16px 24px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.valuation p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    color: #2b2b2b;
+    margin-bottom: 17px;
+}
+.valuation .money_box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.valuation .money_box button {
+    padding: 18px 28px 17px 32px;
+    border-radius: 8px;
+    border: 1px solid #d9d9d9;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 10px;
+    background: #ffffff;
+    margin-bottom: 10px;
+}
+
+.valuation .money_box button:hover,
+.valuation .money_box button.active {
+    background: #47be2f;
+    color: #fff;
+}
+
+.form-check .form-check-input:checked {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+.form-check .form-check-input {
+    width: 20px;
+    height: 20px;
+}
+
+.form-check .form-check-label {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    color: #2b2b2b;
+    margin-left: 3px;
+}
+.donate-btnSection input {
+    width: 391px;
+}
+.donate-btnSection label {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+}
+.donate-btnSection button {
+    background: #22587a;
+    padding: 10px 16px;
+    color: #fff;
+    margin-top: 23px;
+    margin-left: 440px;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+.donate-btnSection button:hover {
+    border: 1px solid #22587a;
+    background: transparent;
+    color: #22587a;
+}
+
+/* img_gallary-section */
+
+.img_gallary-section .container p {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 42px;
+    text-align: left;
+    color: #1e1e1e;
+    font-family: "Noto Serif Bengali", sans-serif;
+}
+
+.grid-container-all .grid-containers img {
+    width: 100%;
+    height: 348px;
+}
+.grid-container-all .grid-containers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* === Gallery Image Styling (uniform size) === */
+.gallery-thumb {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.gallery-thumb:hover {
+    transform: scale(1.02);
+}
+.lb-dataContainer {
+    padding: 25px auto;
+    background: green;
+}
+
+.lb-dataContainer .lb-number {
+    font-size: 20px;
+    padding: 6px 12px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.bg-color {
+    background: #f5fcf8;
+}
+.hover_effect {
+    overflow: hidden;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 348px;
+    background: linear-gradient(
+        180deg,
+        rgba(4, 120, 62, 0.9),
+        rgba(4, 120, 62, 0.6)
+    );
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    transform: scale(0.95);
+}
+
+.grid-containers .position-relative:hover .hover_effect {
+    top: 0;
+    transform: scale(1);
+}
+
+.hover_effect h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease-in-out;
+}
+
+.grid-containers .position-relative:hover .hover_effect h3 {
+    opacity: 1;
+    transform: translateY(0);
+}
+.img_gallary-section .grid-containers .click_img {
+    margin-left: 20px;
+    border-radius: 8px;
+}
+.img_gallary-section .grid-containers .click_img:nth-child(1),
+.img_gallary-section .grid-containers .click_img:nth-child(4) {
+    margin-left: 0px;
+}
+
+@media (max-width: 1300px) {
+    .swiper-wrapper .swiper-slide img {
+        height: 400px;
+    }
+
+    .navbar {
+        height: 56px;
+    }
+
+    .donation-section .row {
+        margin-left: 10px;
+    }
+    .donation-section .row .card {
+        width: 362px;
+        height: 514px;
+    }
+
+    .donation-section .row .card p {
+        width: 100%;
+        font-size: 17px;
+    }
+    .donation-section .row .card .donate-btn {
+        left: 50px;
+    }
+
+    .news_section .row .col .card {
+        width: 542.94px;
+    }
+    .news_section .row .col .card .card-body {
+        margin-left: 0;
+    }
+    .news_section .row .col .card img {
+        width: 205.32px;
+    }
+
+    .contact_section .row .main-body {
+        margin-left: 0px;
+        width: 50%;
+    }
+    footer .container-box {
+        left: 5%;
+    }
+
+    .donate-btnSection button {
+        margin-left: 350px;
+    }
+    .hero-box {
+        width: 1000px;
+    }
+
+    .hero-box .row input,
+    .hero-box .row select {
+        width: 200px;
+    }
+    .donation-section .row .card,
+    .activity_section .card {
+        width: 350px;
+    }
+    .activity_section .row .card p {
+        width: 330px;
+    }
+    .ocation-section .card img {
+        width: 350px;
+    }
+    .ocation-section .card .card_body {
+        width: 320px;
+    }
+    .activity_section .row .card p {
+        width: 310px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero_img img {
+        height: auto;
+    }
+
+    .top_header p {
+        font-size: 20px;
+    }
+
+    .donation-section .row .card_button {
+        margin-left: 0px;
+    }
+    .navbar-nav .dropdown-menu.show {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        transform: translateY(0);
+    }
+    .navbar > .container-fluid {
+        background: #0c736f;
+        padding: 20px auto;
+    }
+    .navbar-nav.navbar-nav .nav-item .nav-link {
+        text-align: left;
+    }
+    body .flower {
+        display: none;
+    }
+    .navbar {
+        height: auto;
+        margin-top: 20px;
+    }
+    .navbar .collapse {
+        margin-top: 24px;
+    }
+    .navbar-nav .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+    }
+
+    .dropend:hover > .dropdown-menu {
+        top: 32px;
+    }
+    .about_section {
+        margin-top: 50px;
+    }
+    .about_section .row .deteails h1 {
+        margin-top: 0;
+        font-size: 18px;
+    }
+    .hero-box {
+        transform: translateX(2%);
+        z-index: -1;
+        position: static;
+        height: 35vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-box .row {
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .hero-box .row div input,
+    .hero-box .row div select,
+    .hero-box .row .btns {
+        width: 100%;
+    }
+
+    .hero-box .row .btns {
+        margin-left: 0px;
+    }
+
+    .hero img {
+        height: 50vh;
+    }
+
+    .hero-box .row select,
+    .hero-box .row input {
+        width: 150px;
+    }
+    .donation-section .row .card {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 30px;
+    }
+    .donation-section {
+        margin-bottom: 100px;
+    }
+    .donation-section .row .card p {
+        max-height: calc(2 * 3em);
+        width: 100%;
+    }
+
+    .donation-section .row .card .donate-btn {
+        width: 590px;
+    }
+
+    .donation-section .row .card .text_donat {
+        display: none;
+    }
+
+    .about_section .row .deteails p {
+        width: 100%;
+        font-size: 15px;
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
+    .donation-section {
+        height: 100%;
+        padding: 0;
+    }
+
+    .activity_section .card {
+        width: 100%;
+    }
+    .activity_section .row .card h3 a,
+    .activity_section .row .card p {
+        width: 100%;
+        max-height: calc(2 * 1.6em);
+    }
+    .activity_section .row .card p {
+    }
+
+    .custom-header span {
+        text-align: left;
+    }
+    .ocation-section {
+        height: auto;
+    }
+    .about_box_section .links .aboutLink {
+        border: none;
+    }
+
+    .ocation-section .card img {
+        padding: 0;
+        width: 100%;
+    }
+    .ocation-section .card,
+    .ocation-section-2 .card {
+        width: 100%;
+        height: 100%;
+    }
+
+    .ocation-section .card .card_body {
+        width: 88%;
+    }
+    .hover_effect {
+        display: none;
+    }
+
+    .banner button {
+        left: 38%;
+    }
+
+    .ocation-section-2 {
+        height: auto;
+    }
+
+    .img_gallary .grid-container-all {
+        grid-template-columns: 1fr;
+    }
+    .img_gallary .grid-container img {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+    .img_gallary-section .grid-container-all .grid-containers img {
+        height: 250px;
+    }
+    .grid-container-all .grid-containers {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .img_gallary .grid-container {
+        padding: 10px;
+        padding-right: 0px;
+    }
+
+    .ocation-section-2 .oct_2 {
+        margin-top: 0px;
+    }
+
+    .slider-content img {
+        width: 100%;
+        max-height: 70vh;
+    }
+    #sliderModal {
+        top: 50px;
+    }
+    .banner .banner_text p {
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+        font-size: 10px;
+    }
+
+    .banner .banner_text {
+        font-size: 15px;
+        width: 200px;
+        top: 42%;
+        left: 0;
+        line-height: 18px;
+    }
+
+    .news_section .row .col .card {
+        width: 100%;
+    }
+    .news_section .row .col .card img {
+        width: 50%;
+    }
+    .contact_section .row .main-body,
+    .contact_section .row .col img {
+        width: 100%;
+    }
+    footer {
+        height: 708px;
+    }
+    footer .footer-boxss {
+        margin-left: 10px;
+    }
+    footer .container-box .col {
+        padding: 0;
+        margin: 0;
+    }
+    footer img {
+        width: 100%;
+    }
+
+    .beforeEffect {
+        display: none;
+    }
+
+    footer .container-box .row {
+        width: 100%;
+    }
+
+    .activity-box-sec .card .date {
+        top: 150px;
+    }
+
+    .donate-btnSection button {
+        margin-left: 495px;
+    }
+
+    .slider-content img {
+        width: 700px;
+        height: 450px;
+    }
+
+    .masonry {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .header_bnts .btn-1 {
+        margin-left: 19px;
+    }
+    .logo_container .img-fluid {
+        margin-left: 10px;
+    }
+    .header_bnts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header_bnts {
+        margin-left: 0px;
+    }
+    .donation-section .row .card h3 {
+        font-size: 20px;
+        line-height: 35px;
+    }
+    .activity_section .row .card p,
+    .donation-section .row .card p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .donation-section .row .card p {
+        max-height: calc(2 * 1.5em);
+        -webkit-line-clamp: 2;
+        width: 100%;
+    }
+
+    .donation-section .row .card .donate-btn {
+        width: 50%;
+        font-size: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 12px;
+    }
+
+    .donation-section .row .card span {
+        font-size: 20px;
+    }
+
+    .activity_section .card {
+        margin-bottom: 30px;
+    }
+
+    .hero-section {
+        width: 100%;
+        margin-top: 100px;
+    }
+    .banner img {
+        width: 100%;
+        height: 156px;
+    }
+    .banner button {
+        margin-top: 47px;
+    }
+    .banner .banner_text {
+        width: 80%;
+        font-size: 16px;
+        top: 45%;
+        left: 10%;
+        line-height: 23px;
+    }
+
+    .hero-box {
+        width: 100%;
+        height: 40vh;
+    }
+    .hero-box .row {
+        width: 100%;
+    }
+
+    .about_section {
+        margin-top: 60px;
+    }
+
+    .hero-box .row select,
+    .hero-box .row input,
+    .hero-box .row .btns {
+        width: 100%;
+    }
+
+    .donation-section .row .card {
+        margin-bottom: 70px;
+        width: 100%;
+        height: 400px;
+    }
+    .donation-section .row .card_button {
+        margin-top: 0;
+    }
+
+    .ocation-section {
+        padding: 0px;
+    }
+    .ocation-section .card img {
+        padding: 0;
+        width: 100%;
+    }
+    .ocation-section .card {
+        min-height: 400px;
+    }
+
+    .ocation-section .card .card_body {
+        width: 88%;
+    }
+
+    .slider-content img {
+        width: 300px;
+        height: 250px;
+    }
+
+    .custom-header span {
+        font-size: 30px;
+    }
+    .custom-header .see-more a {
+        font-size: 15px;
+    }
+
+    .banner button {
+        width: 120px;
+        left: 33%;
+    }
+
+    .ocation-datials-sec .date {
+        display: none;
+    }
+    iframe {
+        width: 100%;
+    }
+
+    .news_section .row .col .card {
+        height: 566px;
+    }
+    .news_section .row .col .card img {
+        width: 100%;
+    }
+
+    .contact_section .row .col p {
+        width: 353px;
+    }
+
+    footer .copyright p {
+        font-size: 16px;
+    }
+    .copyright {
+        margin-top: 30px;
+    }
+
+    .contact_section .row .col h1 {
+        width: 350px;
+    }
+    footer .footer-boxss {
+        flex-direction: column;
+    }
+    .container-box img {
+        width: 100%;
+        height: 97px;
+    }
+    footer .container-box .col {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    footer .container-box {
+        top: 5%;
+        left: 10;
+    }
+    .container-box .link-section {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    footer {
+        height: 908px;
+    }
+    footer .footer-boxss {
+        margin-left: 10px;
+        margin-top: 50px;
+    }
+
+    .beforeEffect {
+        display: none;
+    }
+
+    .activity-box-sec .card .date {
+        width: 60px;
+        height: 60px;
+        top: 265px;
+    }
+    .activity-box-sec .card .date p {
+        font-size: 12px;
+        margin: 0;
+        padding-left: 20px;
+    }
+    .about_box_section .card p span {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .donate-btnSection button {
+        margin-left: 90px;
+    }
+    .valuation .money_box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .Member_information_section .box p {
+        font-size: 15px;
+    }
+    .donate-btnSection label {
+        font-size: 12px;
+    }
+    .donate-btnSection input {
+        width: 150px;
+    }
+    .contact-us .contact-map {
+        margin-top: 100px;
+    }
+
+    .contact_section .row .col img {
+        height: 300px;
+    }
+    .contact_section .row .main-body .row input {
+        margin-bottom: 10px;
+    }
+    .contact_section {
+        height: 1000px;
+    }
+    .grid-container-all .grid-containers img {
+        width: 100%;
+        height: 248px;
+    }
+    .grid-container-all .grid-containers {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,1 @@
+<img class="auto h-15" src={{ $setting->logo}} alt="">

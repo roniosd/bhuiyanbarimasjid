@@ -1,0 +1,95 @@
+[23-May-2025 22:24:39 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[23-May-2025 22:25:29 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[18-Jun-2025 17:56:25 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[18-Jun-2025 18:00:01 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[13-Jul-2025 22:41:11 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[13-Jul-2025 22:42:46 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[17-Jul-2025 23:09:19 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[23-Jul-2025 08:57:22 America/New_York] PHP Warning:  require(/home/jagoron/public_html/vendor/composer/../symfony/string/Resources/functions.php): Failed to open stream: No such file or directory in /home/jagoron/public_html/vendor/composer/autoload_real.php on line 41
+[23-Jul-2025 08:57:22 America/New_York] PHP Fatal error:  Uncaught Error: Failed opening required '/home/jagoron/public_html/vendor/composer/../symfony/string/Resources/functions.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/jagoron/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/jagoron/public_html/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/jagoron/public_html/vendor/autoload.php(22): ComposerAutoloaderInit88970a0117c062eed55fa8728fc43833::getLoader()
+#2 /home/jagoron/public_html/public/index.php(14): require('/home/jagoron/p...')
+#3 /home/jagoron/public_html/index.php(21): require_once('/home/jagoron/p...')
+#4 {main}
+  thrown in /home/jagoron/public_html/vendor/composer/autoload_real.php on line 41
+[23-Jul-2025 08:57:29 America/New_York] PHP Warning:  require(/home/jagoron/public_html/vendor/composer/../symfony/string/Resources/functions.php): Failed to open stream: No such file or directory in /home/jagoron/public_html/vendor/composer/autoload_real.php on line 41
+[23-Jul-2025 08:57:29 America/New_York] PHP Fatal error:  Uncaught Error: Failed opening required '/home/jagoron/public_html/vendor/composer/../symfony/string/Resources/functions.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/jagoron/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/jagoron/public_html/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/jagoron/public_html/vendor/autoload.php(22): ComposerAutoloaderInit88970a0117c062eed55fa8728fc43833::getLoader()
+#2 /home/jagoron/public_html/public/index.php(14): require('/home/jagoron/p...')
+#3 /home/jagoron/public_html/index.php(21): require_once('/home/jagoron/p...')
+#4 {main}
+  thrown in /home/jagoron/public_html/vendor/composer/autoload_real.php on line 41
+[23-Jul-2025 08:57:30 America/New_York] PHP Warning:  require(/home/jagoron/public_html/vendor/composer/../symfony/string/Resources/functions.php): Failed to open stream: No such file or directory in /home/jagoron/public_html/vendor/composer/autoload_real.php on line 41
+[23-Jul-2025 08:57:30 America/New_York] PHP Fatal error:  Uncaught Error: Failed opening required '/home/jagoron/public_html/vendor/composer/../symfony/string/Resources/functions.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/jagoron/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/jagoron/public_html/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/jagoron/public_html/vendor/autoload.php(22): ComposerAutoloaderInit88970a0117c062eed55fa8728fc43833::getLoader()
+#2 /home/jagoron/public_html/public/index.php(14): require('/home/jagoron/p...')
+#3 /home/jagoron/public_html/index.php(21): require_once('/home/jagoron/p...')
+#4 {main}
+  thrown in /home/jagoron/public_html/vendor/composer/autoload_real.php on line 41
+[23-Jul-2025 08:57:33 America/New_York] PHP Warning:  require(/home/jagoron/public_html/vendor/composer/../symfony/string/Resources/functions.php): Failed to open stream: No such file or directory in /home/jagoron/public_html/vendor/composer/autoload_real.php on line 41
+[23-Jul-2025 08:57:33 America/New_York] PHP Fatal error:  Uncaught Error: Failed opening required '/home/jagoron/public_html/vendor/composer/../symfony/string/Resources/functions.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/jagoron/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/jagoron/public_html/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/jagoron/public_html/vendor/autoload.php(22): ComposerAutoloaderInit88970a0117c062eed55fa8728fc43833::getLoader()
+#2 /home/jagoron/public_html/public/index.php(14): require('/home/jagoron/p...')
+#3 /home/jagoron/public_html/index.php(21): require_once('/home/jagoron/p...')
+#4 {main}
+  thrown in /home/jagoron/public_html/vendor/composer/autoload_real.php on line 41
+[23-Jul-2025 08:57:40 America/New_York] PHP Warning:  require(/home/jagoron/public_html/vendor/composer/../symfony/string/Resources/functions.php): Failed to open stream: No such file or directory in /home/jagoron/public_html/vendor/composer/autoload_real.php on line 41
+[23-Jul-2025 08:57:40 America/New_York] PHP Fatal error:  Uncaught Error: Failed opening required '/home/jagoron/public_html/vendor/composer/../symfony/string/Resources/functions.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/jagoron/public_html/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/jagoron/public_html/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/jagoron/public_html/vendor/autoload.php(22): ComposerAutoloaderInit88970a0117c062eed55fa8728fc43833::getLoader()
+#2 /home/jagoron/public_html/public/index.php(14): require('/home/jagoron/p...')
+#3 /home/jagoron/public_html/index.php(21): require_once('/home/jagoron/p...')
+#4 {main}
+  thrown in /home/jagoron/public_html/vendor/composer/autoload_real.php on line 41
+[23-Jul-2025 09:20:12 America/New_York] PHP Fatal error:  Uncaught Error: Class "Carbon\Carbon" not found in /home/jagoron/public_html/vendor/laravel/framework/src/Illuminate/Support/Carbon.php:12
+Stack trace:
+#0 /home/jagoron/public_html/vendor/composer/ClassLoader.php(576): include()
+#1 /home/jagoron/public_html/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#2 /home/jagoron/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(140): Composer\Autoload\ClassLoader->loadClass()
+#3 /home/jagoron/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\Foundation\Http\Kernel->handle()
+#4 /home/jagoron/public_html/public/index.php(20): Illuminate\Foundation\Application->handleRequest()
+#5 /home/jagoron/public_html/index.php(21): require_once('/home/jagoron/p...')
+#6 {main}
+  thrown in /home/jagoron/public_html/vendor/laravel/framework/src/Illuminate/Support/Carbon.php on line 12
+[23-Jul-2025 09:20:20 America/New_York] PHP Parse error:  Unterminated comment starting line 36 in /home/jagoron/public_html/vendor/nesbot/carbon/src/Carbon/CarbonInterface.php on line 36
+[09-Aug-2025 21:24:35 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[09-Aug-2025 21:24:35 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[09-Aug-2025 21:24:35 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[09-Aug-2025 21:24:36 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[09-Aug-2025 21:24:36 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Aug-2025 11:49:45 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Aug-2025 11:49:46 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Aug-2025 11:49:47 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Aug-2025 11:49:47 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Aug-2025 11:49:49 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Sep-2025 12:20:07 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[15-Oct-2025 12:47:13 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[19-Nov-2025 17:09:42 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[19-Nov-2025 17:10:10 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[19-Nov-2025 17:10:35 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[20-Nov-2025 10:30:58 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[20-Nov-2025 10:31:21 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[20-Nov-2025 10:31:22 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[20-Nov-2025 10:35:36 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[20-Nov-2025 10:35:50 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[31-Jan-2026 04:28:30 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Feb-2026 01:33:32 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Feb-2026 01:33:37 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Feb-2026 01:33:44 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Feb-2026 01:33:47 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[24-Feb-2026 01:33:54 America/New_York] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/jagoron/public_html/index.php on line 10
+[03-Jun-2026 22:57:44 UTC] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/bhuiyanbarimasji/public_html/index.php on line 10
+[03-Jun-2026 22:57:47 UTC] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/bhuiyanbarimasji/public_html/index.php on line 10
+[03-Jun-2026 22:57:48 UTC] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/bhuiyanbarimasji/public_html/index.php on line 10
+[03-Jun-2026 22:57:50 UTC] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/bhuiyanbarimasji/public_html/index.php on line 10
+[03-Jun-2026 22:57:52 UTC] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /home/bhuiyanbarimasji/public_html/index.php on line 10
+[16-Jun-2026 13:32:24 Asia/Dhaka] PHP Fatal error:  Trait "Laravel\Sanctum\HasApiTokens" not found in /home/bhuiyanbarimasji/public_html/app/Models/Admin.php on line 12

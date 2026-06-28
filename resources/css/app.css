@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@theme {
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+.form-input {
+    @apply w-full mt-1 rounded-md border border-gray-300 shadow-sm py-3 px-4 focus:border-indigo-500 focus:ring focus:ring-indigo-200;
+}
+@layer components {
+    table {
+        @apply px-10;
+    }
+    .dataTable-top {
+        @apply flex flex-col md:flex-row items-center justify-between gap-2 mb-4;
+    }
+  
+
+    .datatable-top .datatable-dropdown  {
+        @apply capitalize text-lg;
+    }
+    .datatable-top .datatable-search .datatable-input {
+        @apply border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500 w-64;
+    }
+
+    .datatable-bottom .dataTable-pagination nav ul {
+        @apply flex space-x-1 justify-center mt-4;
+    }
+
+    .datatable-bottom .dataTable-pagination nav ul li button {
+        @apply px-3 py-1 text-sm text-gray-700 bg-white border border-gray-300 rounded hover:bg-blue-100;
+    }
+
+    .dataTable-pagination .active button {
+        @apply bg-blue-600 text-white;
+    }
+
+    .datatable-table thead tr th button::after {
+        content: "⇅";
+        @apply ml-1 text-gray-400;
+    }
+}
