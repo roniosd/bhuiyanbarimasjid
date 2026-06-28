@@ -33,6 +33,9 @@ class Adminlogin extends Authenticatable
     {
         return $this->belongsTo(Permission::class, 'role_id');
     }
-
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/profile/{$value}") : null;
+    }
 
 }

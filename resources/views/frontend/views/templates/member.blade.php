@@ -13,7 +13,7 @@
                         <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
 
                             <div class="text-center p-4">
-                                <img src="{{ asset('/public/storage/' . ($member->photo ? 'member/' . $member->photo : 'default/profile.png')) }}"
+                                <img src="{{ $member->photo ?? asset('/public/storage/default/profile.png') }}"
                                     alt="{{ $member->full_name }}" class="rounded-circle border"
                                     style="width:120px;height:120px;object-fit:cover;">
 

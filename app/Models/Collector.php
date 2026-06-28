@@ -18,4 +18,8 @@ class Collector extends Model
     {
         return $this->hasMany(DonationBook::class);
     }
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/collector/{$value}") : null;
+    }
 }

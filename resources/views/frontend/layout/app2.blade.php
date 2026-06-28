@@ -1,4 +1,4 @@
-@props(['setting', 'pageDetails','menus'])
+@props(['setting', 'pageDetails', 'menus'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ isset($pageDetails) ? $pageDetails->title . ' |' : '' }} {{ $setting->title }}</title>
-    <link rel="icon" href="{{ asset('/public/storage/logos/' . $setting->favicon) }}" />
+    <link rel="icon" href="{{ $setting->favicon ?? asset('/public/storage/default/logo.png') }}" />
     <link rel="alternate" href="https://bhuiyanbarimasjid.bd/" hreflang="bn-BD" />
 
     <!-- Meta Tags -->
@@ -22,7 +22,7 @@
     <meta property="og:description" content="{{ $setting->description }}" />
     <meta property="og:url" content="{{ url('https://bhuiyanbarimasjid.bd') }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ asset('/public/storage/logos/' . $setting->favicon) }}" />
+    <meta property="og:image" content="{{ $setting->favicon ?? asset('/public/storage/default/logo.png') }}" />
     <meta property="og:site_name" content="Bhuiyanbarimasjid" />
 
     <!-- Twitter Meta -->
@@ -49,21 +49,21 @@
     <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/public/front/css/style.css">
+    <link rel="stylesheet" href="{{ asset('public/front/css/style.css') }}">
 </head>
 
 <body>
-    <x-frontend.header :menus />
+    <x-frontend.header :menus="$menus" />
 
     {{ $slot }}
 
-    <x-frontend.footer />
+    <x-frontend.footer :menus="$menus" />
 
     <!-- Lightbox2 JS (includes jQuery) -->
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="/public/front/js/main.js"></script>
+    <script src="{{ asset('public/front/js/main.js') }}"></script>
 
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

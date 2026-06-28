@@ -3,7 +3,7 @@
     <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center py-3 gap-0 gap-lg-5">
         <div>
             <a href="{{ route('homePage') }}" class="logo_container">
-                <img class="img-fluid" src="{{ asset('/public/storage/logos/' . $setting->logo) }}" alt="header"
+                <img class="img-fluid" src="{{ $setting->logo ?? asset('/public/storage/default/logo.png') }}" alt="header"
                     style="max-height: 80px;" />
             </a>
         </div>

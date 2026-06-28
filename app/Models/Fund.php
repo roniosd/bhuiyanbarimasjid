@@ -23,4 +23,9 @@ class Fund extends Model
         'slug'
     ];
 
+    public function getFeaturedPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/fund/{$value}") : null;
+    }
+
 }

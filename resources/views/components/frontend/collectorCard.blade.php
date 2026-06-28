@@ -8,7 +8,7 @@
         <div class="card-body text-center py-4">
 
             <img
-                src="{{ asset('/public/storage/' . ($collector->photo ? 'collector/' . $collector->photo : 'default/profile.png')) }}"
+                src="{{ $collector->photo ?? asset('/public/storage/default/profile.png') }}"
                 alt="{{ $collector->name }}"
                 class="rounded-circle mb-3"
                 style="width:90px;height:90px;object-fit:cover;"

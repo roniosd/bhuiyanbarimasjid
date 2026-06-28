@@ -8,4 +8,9 @@ class HomepageSetting extends Model
 {
     public $timestamps = false;
     protected $fillable = ['title', 'btn_label', 'btn_link', 'short_descreption', 'status', 'photo', 'sections'];
+
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/homepage/{$value}") : null;
+    }
 }

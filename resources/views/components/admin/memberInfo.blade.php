@@ -152,7 +152,7 @@
                 <div
                     style="width: 110px; height: 130px; display: flex; align-items: center; justify-content: ceneter; ">
                     <img style="margin-top: 90px"
-                        src="{{ asset('/public/storage/' . ($member->photo ? 'member/' . $member->photo : 'default/category.png')) }}"
+                        src="{{ $member->photo ?? asset('/public/storage/default/category.png') }}"
                         alt="Member Photo" style="max-width: 100%; max-height: 100%; object-fit: cover;">
                 </div>
             </div>

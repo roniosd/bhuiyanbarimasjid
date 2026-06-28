@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -12,8 +11,8 @@ class DashboardController extends Controller
     {
         if (Auth::guard('admin')->check()) {
             return view('admin.views.adminDashboard');
-        } else {
-            return view('admin.auth.adminLogin');
         }
+
+        return view('admin.auth.adminLogin'); // ← This line IS executed
     }
 }

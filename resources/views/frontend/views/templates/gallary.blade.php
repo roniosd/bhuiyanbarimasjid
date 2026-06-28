@@ -10,7 +10,7 @@
                     @forelse ($albums->take(6) as $album)
                         <a href="{{route('photoGallary', $album->slug)}}"
                             class="click_img position-relative overflow-hidden mt-lg-5 text-decoration-none text-black fw-sm">
-                            <img style="border-radius: 8px" src="{{asset('/public/storage/' . ($album->cover ? 'media/' . $album->cover : 'default/category.png'))}}"
+                            <img style="border-radius: 8px" src="{{ $album->cover ?? asset('/public/storage/default/category.png') }}"
                                 alt="{{$album->album_name}}" class="gallery-img" />
                             <h5 class="mt-2 text-truncate text-capitalize">{{$album->album_name}}</h5>
                             <div class="hover_effect position-absolute">

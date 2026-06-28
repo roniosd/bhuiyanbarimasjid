@@ -121,7 +121,7 @@
 
         {{-- Header Image --}}
         <div class="section" style="position: relative; margin-top: 150px;">
-            <img src="{{ asset('public/storage/' . ($student->image ? 'student/' . $student->image : 'default/category.png')) }}"
+            <img src="{{ $student->image ?? asset('/public/storage/default/category.png') }}"
                 alt="Profile"
                 style="position: absolute; top: 0; right: 10px; width: 130px; height: 140px; object-fit: cover; border: 1px solid #000;">
         </div>

@@ -7,7 +7,7 @@
                     </h1>
                     <h5>{{$activity->getDate($activity->created_at, 'd F Y')}}</h5>
                     <img class="about_as_img"
-                        src="{{ asset('/public/storage/' . ($activity->photo ? 'activity/' . $activity->photo : 'default/category.png')) }}"
+                        src="{{ $activity->photo ?? asset('/public/storage/default/category.png') }}"
                         alt="" />
                     <p>{!!$activity->description!!}
                     </p>

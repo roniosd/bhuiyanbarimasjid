@@ -8,9 +8,9 @@
             <div class="row g-3 justify-content-center">
                 @forelse ($photos->media as $photo)
                     <div class="col-md-4 col-sm-6">
-                        <a href="{{ asset('/public/storage/' . ($photo->media ? "media/" . $photo->media : 'default/category.png')) }}"
+                        <a href="{{ $photo->media ?? asset('/public/storage/default/category.png') }}"
                             data-lightbox="example-set">
-                            <img src="{{ asset('/public/storage/' . ($photo->media ? "media/" . $photo->media : 'default/category.png')) }}"
+                            <img src="{{ $photo->media ?? asset('/public/storage/default/category.png') }}"
                                 class="gallery-thumb" alt="{{$photo->alt}}">
                         </a>
                     </div>

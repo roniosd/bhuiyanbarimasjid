@@ -23,4 +23,9 @@ class Category extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/category/{$value}") : null;
+    }
 }

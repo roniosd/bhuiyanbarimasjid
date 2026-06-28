@@ -34,7 +34,7 @@
                                             @foreach ($funds as $fund)
                                                 <tr>
                                                     <td>
-                                                        <img src="{{ asset('/public/storage/' . ($fund->featured_photo ? 'fund/' . $fund->featured_photo : 'default/profile.png')) }}"
+                                                        <img src="{{ $fund->featured_photo ?? asset('/public/storage/default/profile.png') }}"
                                                             alt="Profile" width="50" height="50">
                                                     </td>
                                                     <td>{{ $fund->shortText($fund->title, 80) }}</td>

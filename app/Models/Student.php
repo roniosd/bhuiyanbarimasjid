@@ -40,4 +40,9 @@ class Student extends Model
         return $this->hasOne(StudentContact::class)->where('type', 'permanent');
     }
 
+    public function getImageAttribute($value)
+    {
+        return $value ? asset("public/storage/student/{$value}") : null;
+    }
+
 }

@@ -33,7 +33,7 @@
                                             @foreach ($activitys as $actitvity)
                                                 <tr>
                                                     <td>
-                                                        <img src="{{ asset('/public/storage/' . ($actitvity->photo ? 'activity/' . $actitvity->photo : 'default/profile.png')) }}"
+                                                        <img src="{{$actitvity->photo?? asset('/public/storage/default/profile.png')) }}"
                                                             alt="Profile" width="50" height="50">
                                                     </td>
                                                     <td>{{ $actitvity->title }}</td>

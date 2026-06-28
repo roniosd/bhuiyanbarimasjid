@@ -1,7 +1,4 @@
 <x-base-layout>
-
-    {{-- <x-auth-session-status class="mb-4" :status="session('status')" /> --}}
-
     <div class="overflow-hidden">
 
         <div class="flex items-center justify-center min-h-[80vh] px-6">
@@ -9,7 +6,7 @@
 
                 <div class="text-center mb-8">
 
-                    <img src="{{ $setting->logo ? asset('/public/storage/logos/' . $setting->logo) : asset('public/storage/default/loginLog.png') }}"
+                    <img src="{{ $setting->logo ?? asset('public/storage/default/logo.png') }}"
                         class="h-16 mx-auto mb-4" alt="Larong">
 
                     <h2 class="text-3xl font-bold text-gray-800">
@@ -52,7 +49,7 @@
                     </div>
 
                     <button type="submit"
-                        class="w-full bg-[#216659] hover:bg-[#184E43] text-white font-semibold py-3 rounded-xl transition mt-5">
+                        class="w-full bg-[#216659] hover:bg-[#184E43] text-white font-semibold py-3 rounded-xl transition">
 
                         Login
 

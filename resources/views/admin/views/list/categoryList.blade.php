@@ -37,7 +37,7 @@
                                                 @foreach ($categoris as $category)
                                                     <tr>
                                                         <td>
-                                                            <img src="{{ asset('/public/storage/' . ($category->photo ? 'category/' . $category->photo : 'default/profile.png')) }}"
+                                                            <img src="{{ $category->photo ?? asset('/public/storage/default/profile.png') }}"
                                                                 alt="Profile" width="50" height="50">
                                                         </td>
                                                         <td>{{ $category->name }}</td>

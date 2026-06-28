@@ -128,7 +128,7 @@ class FrontPageController extends Controller
          ->paginate(6);
 
       $committees = Committee::where('status', 'published')
-         ->latest()
+         ->oldest()
          ->paginate(20);
 
 

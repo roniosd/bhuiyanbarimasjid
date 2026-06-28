@@ -8,7 +8,7 @@
                         {{$event->getBangla($event->getDate($event->start_date, 'd M Y'))}} । {{$event->venue}}
                     </h5>
                     <img  class="position-relative ocation-datials-img"
-                        src="{{ asset('/public/storage/' . ($event->photo ? 'event/' . $event->photo : 'default/category.png')) }}"
+                        src="{{ $event->photo ?? asset('/public/storage/default/category.png') }}"
                         alt="" />
 
                     <div class="date position-absolute text-center">

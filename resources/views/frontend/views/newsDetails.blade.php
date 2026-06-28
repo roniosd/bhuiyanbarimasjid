@@ -8,7 +8,7 @@
                     </h1>
                     <h5>{{$newsInfo->getBangla($newsInfo->getDate($newsInfo->updated_at, 'l | d M Y '))}}</h5>
 
-                    <img style="object-fit: cover"  src="{{ asset('/public/storage/' . ($newsInfo->photo ? 'post/' . $newsInfo->photo : 'default/category.png')) }}" alt="News information" />
+                    <img style="object-fit: cover"  src="{{ $newsInfo->photo ?? asset('/public/storage/default/category.png') }}" alt="News information" />
 
                     <p>{!!$newsInfo->description!!}
                     </p>

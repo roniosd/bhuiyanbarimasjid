@@ -17,4 +17,8 @@ class Slider extends Model
         'description',
         'photo',
     ];
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/slider/{$value}") : null;
+    }
 }

@@ -21,4 +21,9 @@ class Page extends Model
         'template',
         'widget'
     ];
+
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/page/{$value}") : null;
+    }
 }

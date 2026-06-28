@@ -23,7 +23,7 @@
                 </div>
                 <div class="card col-lg-9 col-md-12 col-sm-12 col-12 overflow-hidden border-0">
                     <img style="height: 304px;"
-                        src="{{ asset('/public/storage/' . ($pageDetails->photo ? 'page/' . $pageDetails->photo : 'default/category.png')) }}"
+                        src="{{ $pageDetails->photo ?? asset('/public/storage/default/category.png') }}"
                         alt="" />
                     <p style="font-size: 25px"><b>{{$pageDetails->title}}</b></p>
                     <p>

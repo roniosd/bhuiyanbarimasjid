@@ -16,4 +16,9 @@ class Committee extends Model
         'membership_fee',
         'status',
     ];
+
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/committee/{$value}") : null;
+    }
 }

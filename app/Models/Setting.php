@@ -25,4 +25,18 @@ class Setting extends Model
         'terms',
         'social_links'
     ];
+    public function getLogoAttribute($value)
+    {
+        return $value ? asset("public/storage/logos/{$value}") : null;
+    }
+
+    public function getFaviconAttribute($value)
+    {
+        return $value ? asset("public/storage/logos/{$value}") : null;
+    }
+
+    public function getFlogoAttribute($value)
+    {
+        return $value ? asset("public/storage/logos/{$value}") : null;
+    }
 }

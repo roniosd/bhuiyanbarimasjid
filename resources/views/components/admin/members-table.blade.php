@@ -17,14 +17,7 @@
                     @forelse ($members as $member)
                         <tr>
                             <td>
-                                <img src="{{ asset(
-                                    '/public/storage/' .
-                                        ($member->photo
-                                            ? 'member/' . $member->photo
-                                            : ($member->image
-                                                ? 'student/' . $member->image
-                                                : 'default/category.png')),
-                                ) }}"
+                                <img src="{{ $member->photo ?? ($member->image ?? asset('/public/storage/default/category.png')) }}"
                                     alt="Member Photo" width="50" height="50" style="object-fit: cover;">
                             </td>
                             <td>{{ $member->full_name ?? $member->name_bn }}</td>

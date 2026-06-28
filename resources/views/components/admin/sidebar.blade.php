@@ -1,4 +1,4 @@
-<div class="sidebar relative top-25  group hover:bg-[#14532D] left-0"
+<div class="sidebar relative top-16  group hover:bg-[#14532D] left-0"
     style="border-right: 1px solid #22587a; background-color: #22587a; color: #fff;">
     @php
         $openItem = collect([

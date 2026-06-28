@@ -17,4 +17,9 @@ class Activities extends Model
         'short_description',
         'slug'
     ];
+
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/activity/{$value}") : null;
+    }
 }

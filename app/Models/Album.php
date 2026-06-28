@@ -14,4 +14,9 @@ class Album extends Model
     {
         return $this->hasMany(Media::class, 'album_id');
     }
+
+    public function getCoverAttribute($value)
+    {
+        return $value ? asset("public/storage/media/{$value}") : null;
+    }
 }

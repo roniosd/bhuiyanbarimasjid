@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>BH | {{ $title }}</title>
-    <link rel="icon" href="{{ asset($setting->favicon) }}">
+    <link rel="icon" href="{{ $setting->favicon }}">
 
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">

@@ -18,7 +18,7 @@
                                     <div class="col-xxl-3 col-xl-4 col-lg-4 mb-4">
                                         <div class="card h-100 shadow-sm">
                                             <div class="position-relative">
-                                                <img src="{{ asset('/public/storage/' . ($media->media ? 'media/' . $media->media : 'default/category.png')) }}"
+                                                <img src="{{ $media->media ?? asset('/public/storage/default/category.png') }}"
                                                     class="card-img-top" alt="Album Image"
                                                     style="height: 200px; object-fit: cover;">
                                                 <div class="position-absolute top-0 end-0 p-2 d-flex gap-2">

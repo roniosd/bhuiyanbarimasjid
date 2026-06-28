@@ -35,4 +35,9 @@ class Member extends Model
     {
         return $this->hasOne(MemberContact::class)->where('type', 'permanent');
     }
+
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/member/{$value}") : null;
+    }
 }

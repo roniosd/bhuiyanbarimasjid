@@ -36,7 +36,7 @@
                                                 @foreach ($sliders as $slider)
                                                     <tr>
                                                         <td>
-                                                            <img src="{{ asset('/public/storage/' . ($slider->photo ? 'slider/' . $slider->photo : 'default/profile.png')) }}"
+                                                            <img src="{{ $slider->photo ?? asset('/public/storage/default/profile.png') }}"
                                                                 alt="slider" width="50" height="50">
                                                         </td>
                                                         <td>{{ $slider->title }}</td>

@@ -36,7 +36,7 @@
                                             @foreach ($committees as $committee)
                                                 <tr>
                                                     <td>
-                                                        <img src="{{ asset('/public/storage/' . ($committee->photo ? 'committee/' . $committee->photo : 'default/profile.png')) }}"
+                                                        <img src="{{ $committee->photo ?? asset('/public/storage/default/profile.png') }}"
                                                             alt="Profile" width="50" height="50">
                                                     </td>
                                                     <td>{{ $committee->name }}</td>

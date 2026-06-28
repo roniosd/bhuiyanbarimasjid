@@ -1,6 +1,6 @@
 @props(['activity'])
 <div class="card col-lg-4 col-md-6 col-sm-12 col-6">
-    <img src="{{ asset('/public/storage/' . ($activity->photo ? '\activity/' . $activity->photo : 'default/category.png')) }}"
+    <img src="{{ $activity->photo ?? asset('/public/storage/default/category.png') }}"
         alt="{{$activity->title}}" />
     <h3>
         <a href="{{ route('activityDetails', $activity->slug) }}">

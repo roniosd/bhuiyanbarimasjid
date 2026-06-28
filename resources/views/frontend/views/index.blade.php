@@ -8,7 +8,7 @@
                 <div class="swiper-wrapper">
                     @forelse ($sliders as $slider)
                         <div class="swiper-slide ">
-                            <img class="img-fluid" src="{{ asset('/public/storage/slider/' . $slider->photo) }}"
+                            <img class="img-fluid" src="{{ $slider->photo ?? asset('/public/storage/default/category.png') }}"
                                 alt="slider-{{ $slider->position }}" />
                         </div>
                     @empty
@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-sm-12 col-lg-6">
                     <img class="img-fluid"
-                        src="{{ asset('/public/storage/' . ($aboutUs->photo ? 'page/' . $aboutUs->photo : 'default/category.png')) }}"
+                        src="{{ $aboutUs->photo ?? asset('/public/storage/default/category.png') }}"
                         alt="{{$aboutUs->title}}" />
                 </div>
                 <div class="deteails col-12 col-md-6 col-sm-12 col-lg-5 mt-5 mt-lg-0 mt-md-0">
@@ -129,7 +129,7 @@
         </section>
 
         <section class="container banner position-relative {{ $sections['ব্যানার'] ? '' : 'd-none' }}">
-            <img src="{{ asset('/public/storage/' . ($homepageSetting->photo ? 'homepage/' . $homepageSetting->photo : 'default/category.png')) }}"
+            <img src="{{ $homepageSetting->photo ?? asset('/public/storage/default/category.png') }}"
                 class="img-fluid ms-lg-3" alt="" />
 
             <div class="position-absolute banner_text">
@@ -184,7 +184,7 @@
                 <div class="masonry">
                     @forelse ($albums->take(6) as $index => $album)
                         <a href="{{ route('photoGallary', $album->slug) }}" class="item item{{ $index + 1 }}">
-                            <img src="{{ asset('/public/storage/' . ($album->cover ? 'media/' . $album->cover : 'default/category.png')) }}"
+                            <img src="{{ $album->cover ?? asset('/public/storage/default/category.png') }}"
                                 class="img-fluid" alt="{{ $album->album_name }}" />
                             <h1 class="pt-2">{{ $album->shortText($album->album_name, 25) }}</h1>
                         </a>

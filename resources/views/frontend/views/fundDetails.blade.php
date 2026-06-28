@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="card col-lg-12 col-md-12 col-sm-12 col-12 border-0">
                     <img style="height: 432px;"
-                        src="{{ asset('/public/storage/' . ($fund->featured_photo ? 'fund/' . $fund->featured_photo : 'default/category.png')) }}"
+                        src="{{ $fund->featured_photo ?? asset('/public/storage/default/category.png') }}"
                         alt="Musque" />
                     <p>
                         {!! $fund->description !!}

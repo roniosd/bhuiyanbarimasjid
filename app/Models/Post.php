@@ -41,5 +41,10 @@ class Post extends Model
     {
         return $this->belongsTo(Adminlogin::class, 'author');
     }
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/post/{$value}") : null;
+    }
+ 
 
 }

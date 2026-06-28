@@ -11,7 +11,7 @@
             <div id="dropzone-{{ $name }}" class="rounded text-center p-4 cursor-pointer"
                 style="cursor: pointer; border: 2px dashed gray;">
                 <p class="text-muted small mb-2">Drag & drop an image here or click to upload</p>
-                <img id="{{ $name }}-preview" src="{{ asset('/public/storage/' . ($img ?? 'default/category.png')) }}"
+                <img id="{{ $name }}-preview" src="{{ $img ?? asset('/public/storage/default/category.png') }}"
                     alt="Image Preview" class="img-fluid rounded shadow-sm border mt-3"
                     style="max-height: 160px; object-fit: cover;" />
             </div>

@@ -6,7 +6,7 @@
             <div class="col col-lg-6 col-md-12 col-sm-12 col-12 text-md-center">
                 <img class="img-fluid"
                  
-                    src="{{ asset('/public/storage/' . ($setting->flogo ? 'logos/' . $setting->flogo : 'default/footer-logo.png')) }}"
+                    src="{{ $setting->flogo ?? asset('/public/storage/default/footer-logo.png') }}"
                     alt="Fotter Logo" />
             </div>
             <div class="col col-lg-6 col-md-12 col-sm-12 col-12 m-md-auto">

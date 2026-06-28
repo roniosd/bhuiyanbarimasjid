@@ -12,4 +12,14 @@ class Media extends Model
     {
         return $this->belongsTo(Album::class, 'album_id');
     }
+
+    public function getImageAttribute($value)
+    {
+        return $value ? asset("public/storage/media/{$value}") : null;
+    }
+
+    public function getMediaAttribute($value)
+    {
+        return $value ? asset("public/storage/media/{$value}") : null;
+    }
 }

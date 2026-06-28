@@ -37,7 +37,7 @@
                                                 @foreach ($events as $event)
                                                     <tr>
                                                         <td>
-                                                            <img src="{{ asset('/public/storage/' . ($event->photo ? 'event/' . $event->photo : 'default/profile.png')) }}"
+                                                            <img src="{{ $event->photo ?? asset('/public/storage/default/profile.png') }}"
                                                                 alt="Profile" width="50" height="50">
                                                         </td>
                                                         <td>{{ $event->title }}</td>

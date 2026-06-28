@@ -34,7 +34,7 @@
                                             <tr>
                                                 <td>
                                                     <img width="50" height="50"
-                                                        src="{{ asset('/public/storage/' . ($admin->photo ? 'profile/' . $admin->photo : 'default/profile.png')) }}"
+                                                        src="{{ $admin->photo ?? asset('/public/storage/default/profile.png') }}"
                                                         alt="Profile">
                                                 </td>
                                                 <td>{{ $admin->full_name }}</td>

@@ -31,4 +31,9 @@ class Event extends Model
         'slug',
         'short_description'
     ];
+
+    public function getPhotoAttribute($value)
+    {
+        return $value ? asset("public/storage/event/{$value}") : null;
+    }
 }
