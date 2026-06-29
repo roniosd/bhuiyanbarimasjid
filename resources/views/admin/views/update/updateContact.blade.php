@@ -1,81 +1,15 @@
-<x-app-layout title="Add Parmition">
-    <div class="content-area pb-0">
-        <form action="orgContactUpdate" method="POST" class="row theme-form">
-            @csrf
+<x-form.add-form title="Update Contact Info" action="orgContactUpdate" button="Update Contact" class="col-span-4">
+    <x-form.form-input label="Address" name="address" :value="$contact->address ?? ''" placeholder="Enter address"
+        required />
 
-            <div>
-                <div class="content-inner">
-                    <div class="custom-card">
+    <x-form.form-input label="Email" name="email" type="email" :value="$contact->email ?? ''"
+        placeholder="Enter email" />
 
-                        <div class="custom-card-header">
-                            <div class="heading">
-                                <h1>Update Contact Info</h1>
-                            </div>
-                            <div class="header-rigth">
-                                <p>Fields marked with * must be filled</p>
-                            </div>
-                        </div>
+    <x-form.form-input label="TNT (Landline)" name="tnt" :value="$contact->tnt ?? ''" placeholder="Enter TNT" />
 
-                        <div class="custom-card-body">
-                            <div class="row">
-                                {{-- Address --}}
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label for="">Address<sup>*</sup></label>
-                                        <input type="text" name="address" class="form-control"
-                                            placeholder="Enter address"
-                                            value="{{ old('address', $contact->address ?? '') }}">
-                                    </div>
-                                </div>
+    <x-form.form-input label="Mobile" name="mobile" :value="$contact->mobile ?? ''"
+        placeholder="Enter mobile number" />
 
-                                {{-- Email --}}
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label for="">Email</label>
-                                        <input type="email" name="email" class="form-control"
-                                            placeholder="Enter email" value="{{ old('email', $contact->email ?? '') }}">
-                                    </div>
-                                </div>
-
-                                {{-- TNT --}}
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label for="">TNT (Landline)</label>
-                                        <input type="text" name="tnt" class="form-control"
-                                            placeholder="Enter TNT" value="{{ old('tnt', $contact->tnt ?? '') }}">
-                                    </div>
-                                </div>
-
-                                {{-- Mobile --}}
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label for="">Mobile</label>
-                                        <input type="text" name="mobile" class="form-control"
-                                            placeholder="Enter mobile number"
-                                            value="{{ old('mobile', $contact->mobile ?? '') }}">
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- Mobile --}}
-                            <div class="col-lg-12">
-                                <div class="form-group custom-form-group">
-                                    <label for="">Map</label>
-                                    <input type="url" name="map" class="form-control"
-                                        placeholder="Enter a map url" value="{{ old('map', $contact->map ?? '') }}">
-                                </div>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn theme-btn">
-                            <i class="bi bi-plus-circle-dotted me-3"></i>
-                            Update Contact
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-    </div>
-    </form>
-    </div>
-</x-app-layout>
+    <x-form.form-input divClass="col-span-2" label="Map" name="map" type="url" :value="$contact->map ?? ''"
+        placeholder="Enter a map url" />
+</x-form.add-form>

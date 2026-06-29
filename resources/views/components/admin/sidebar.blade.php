@@ -111,7 +111,7 @@
 
         {{-- Gallery --}}
         <x-sidebar.link href="{{ route('gallery.all') }}" title="Gallery" icon="bi-image" />
-     
+
         {{-- Fund --}}
         <x-sidebar.dropdown id="fund" title="Donation" icon="bi-currency-dollar">
             <x-sidebar.link href="{{ route('fund.create') }}" title="Create Donation" icon="bi-file-earmark-plus" />
@@ -142,52 +142,18 @@
         </x-sidebar.dropdown>
 
         {{-- Activity Log --}}
-        <li class="menu-item">
-            <a href="{{ route('activitylog') }}"
-                class="flex items-center gap-2 px-3 py-2 rounded text-white hover:bg-gray-100 hover:text-blue-600
-                      {{ request()->routeIs('activitylog') ? 'bg-gray-200 text-blue-600 font-medium' : '' }}">
-                <i class="bi bi-clipboard-data fs-5" title="Activity Log"></i>
-                Activity Log
-            </a>
-        </li>
+        <x-sidebar.link href="{{ route('activitylog') }}" title="Activity Log" icon="bi-clipboard-data" />
 
         {{-- Subscribers --}}
-        <li class="menu-item">
-            <a href="{{ route('subscribers') }}"
-                class="flex items-center gap-2 px-3 py-2 rounded text-white hover:bg-gray-100 hover:text-blue-600
-                      {{ request()->routeIs('subscribers') ? 'bg-gray-200 text-blue-600 font-medium' : '' }}">
-                <i class="bi bi-person-lines-fill fs-5" title="Subscribers"></i>
-                Subscribers
-            </a>
-        </li>
+        <x-sidebar.link href="{{ route('subscribers') }}" title="Subscribers" icon="bi-person-lines-fill" />
 
         {{-- Donors --}}
-        <li class="menu-item">
-            <a href="{{ route('doners') }}"
-                class="flex items-center gap-2 px-3 py-2 rounded text-white hover:bg-gray-100 hover:text-blue-600
-                      {{ request()->routeIs('doners') ? 'bg-gray-200 text-blue-600 font-medium' : '' }}">
-                <i class="bi bi-hand-thumbs-up fs-5" title="Donors"></i>
-                Donors
-            </a>
-        </li>
+        <x-sidebar.link href="{{ route('doners') }}" title="Donors" icon="bi-hand-thumbs-up" />
 
         {{-- Feedback --}}
-        <li class="menu-item">
-            <a href="{{ route('feedbacks') }}"
-                class="flex items-center gap-2 px-3 py-2 rounded text-white hover:bg-gray-100 hover:text-blue-600
-                      {{ request()->routeIs('feedbacks') ? 'bg-gray-200 text-blue-600 font-medium' : '' }}">
-                <i class="bi bi-chat-left-dots fs-5" title="Feedback"></i>
-                Feedback
-            </a>
-        </li>
+        <x-sidebar.link href="{{ route('feedbacks') }}" title="Feedback" icon="bi-chat-left-dots" />
 
         {{-- Logout --}}
-        <li class="menu-item">
-            <a href="{{ route('logout') }}"
-                class="flex items-center gap-2 px-3 py-2 rounded text-white hover:bg-gray-100 hover:text-blue-600">
-                <i class="bi bi-box-arrow-right fs-5" title="Logout"></i>
-                Logout
-            </a>
-        </li>
+        <x-sidebar.link href="{{ route('logout') }}" title="Logout" icon="bi-box-arrow-right" />
     </ul>
 </div>

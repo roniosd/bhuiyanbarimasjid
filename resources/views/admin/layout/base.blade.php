@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>BH | {{ $title }}</title>
+    <title>BBBMJM | {{ $title }}</title>
     <link rel="icon" href="{{ $setting->favicon }}">
 
     <!-- Fonts & Icons -->

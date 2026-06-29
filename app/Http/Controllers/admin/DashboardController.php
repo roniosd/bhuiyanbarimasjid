@@ -13,6 +13,6 @@ class DashboardController extends Controller
             return view('admin.views.adminDashboard');
         }
 
-        return view('admin.auth.adminLogin'); // ← This line IS executed
+        return view('admin.auth.adminLogin'); 
     }
 }

@@ -112,7 +112,7 @@
                         </div>
                     </td>
 
-                    <x-action-button id="{{ $payment->id }}" delete="payment.destroy" />
+                    <x-button.action-button id="{{ $payment->id }}" delete="payment.destroy" />
                 </tr>
             @empty
                 <tr>

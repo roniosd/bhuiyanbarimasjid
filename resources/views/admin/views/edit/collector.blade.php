@@ -10,6 +10,6 @@
     <x-slot name="sitecontent">
         <x-form.form-input label="Appointed By" name="appointed_by" :value="$collector->appointed_by" placeholder="Ex: Roni" />
 
-        <x-imginputshow name="photo" :value="$collector->photo" title="Collector Image" size="2020 X 650px" />
+        <x-imginputshow name="photo" :img="$collector->photo" title="Collector Image" size="2020 X 650px" />
     </x-slot>
 </x-form.add-form>

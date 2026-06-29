@@ -1,51 +1,6 @@
-<x-app-layout title="Site Setting">
-    <div class="content-area">
-        <form action="socialUpdate" method="POST" class="row theme-form">
-            @csrf
-            <div class="col-xxl-12 col-xl-12 col-lg-12">
-                <div class="content-inner">
-                    <div class="custom-card p-1">
-                        <div class="custom-card-header ">
-
-                            <div class="heading">
-                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M20.1456 22.6459C19.3223 20.335 21.2 17.9807 23.6264 18.2696L23.8575 18.3129C24.2475 18.3707 24.6374 18.154 24.7674 17.7785C25.1574 16.7241 25.4029 15.5976 25.4896 14.4277C25.5185 14.0377 25.2585 13.6911 24.8974 13.5611L24.7097 13.5033C22.3987 12.7089 21.7344 9.77695 23.4675 8.0582L23.5542 7.97154C23.8431 7.69712 23.9008 7.24938 23.6986 6.91719C23.092 5.9206 22.3554 5.02512 21.5177 4.24519C21.2288 3.97077 20.81 3.95632 20.4778 4.15853L20.42 4.20186C18.3546 5.51619 15.6393 4.20186 15.3793 1.77539V1.76095C15.336 1.37098 15.0471 1.05323 14.6572 0.995459C14.1083 0.923243 13.5595 0.879913 12.9817 0.879913C12.3607 0.879913 11.7685 0.923243 11.1763 0.995459C10.8008 1.05323 10.512 1.37098 10.4686 1.76095C10.2086 4.18742 7.47887 5.50175 5.42793 4.18742C5.09574 3.98521 4.66244 4.0141 4.38802 4.27407C3.55031 5.06845 2.8137 5.97838 2.20709 6.9894C2.00488 7.3216 2.0771 7.7549 2.35152 8.02932L2.36596 8.04376C4.09915 9.74806 3.43476 12.6945 1.12384 13.4889L1.05163 13.5177C0.676104 13.6477 0.430569 13.9944 0.459455 14.3843C0.546115 15.5542 0.79165 16.6808 1.18162 17.7496C1.31161 18.1107 1.70157 18.3273 2.0771 18.284L2.20709 18.2696C4.63355 17.9807 6.51117 20.3494 5.68791 22.6459L5.61569 22.8336C5.4857 23.1947 5.61569 23.6136 5.93344 23.8302C6.87225 24.4657 7.89772 24.9857 8.99541 25.3468C9.37094 25.4623 9.78979 25.3034 9.99199 24.9712L10.122 24.769C11.4074 22.6892 14.4261 22.6892 15.7115 24.769L15.856 25.0001C16.0582 25.3323 16.4626 25.4912 16.8381 25.3756C17.9358 25.0146 18.9757 24.5091 19.9145 23.888C20.2323 23.6713 20.3622 23.2525 20.2323 22.8914L20.1456 22.6459ZM18.1578 13.229C18.1578 16.0717 15.8533 18.3762 13.0106 18.3762C10.1679 18.3762 7.8634 16.0717 7.8634 13.229C7.8634 10.3863 10.1679 8.0818 13.0106 8.0818C15.8533 8.0818 18.1578 10.3863 18.1578 13.229Z"
-                                        fill="#FFCC04" />
-                                </svg>
-                                <h1>Social Site Settings</h1>
-                            </div>
-                        </div>
-                        <div class="custom-card-body">
-                            <div class="row">
-
-                                @foreach (json_decode($setting->social_links, true) as $key => $value)
-                                    <div class="col-lg-4 text-center">
-                                        <div class="rounded-circle bg-success d-flex align-items-center justify-content-center mx-auto mb-2"
-                                            style="width: 80px; height: 80px;">
-                                            <i class="text-white bi bi-{{ $key }} text-dark fs-2"></i>
-                                        </div>
-                                        <input type="url" name="social_links[{{ $key }}]"
-                                            class="form-control" value="{{ $value }}"
-                                            placeholder="{{ ucfirst($key) }} Link">
-                                    </div>
-                                @endforeach
-
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn theme-btn">
-                        <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.42754 19.0284C14.5865 19.0284 18.7686 14.8462 18.7686 9.68724C18.7686 4.52829 14.5865 0.34613 9.42754 0.34613C4.26858 0.34613 0.0864258 4.52829 0.0864258 9.68724C0.0864258 14.8462 4.26858 19.0284 9.42754 19.0284ZM8.64483 12.812L13.8724 7.58449L12.74 6.45217L8.07868 11.1135L5.99029 9.02507L4.85796 10.1574L7.51251 12.812L8.07867 13.3782L8.64483 12.812Z"
-                                fill="white" />
-                        </svg>
-                        Update Social Settings
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</x-app-layout>
+<x-form.add-form title="Social Site Settings" action="socialUpdate" button="Update Social Settings" class="col-span-4">
+    @foreach (json_decode($setting->social_links, true) as $key => $value)
+        <x-form.form-input label="{{ ucfirst($key) }} Link" name="social_links[{{ $key }}]" type="url"
+            :value="$value" placeholder="{{ ucfirst($key) }} Link" />
+    @endforeach
+</x-form.add-form>

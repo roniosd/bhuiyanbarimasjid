@@ -2,11 +2,11 @@
   @forelse ($medias as $media)
       <div class="bg-white rounded shadow hover:shadow-md transition duration-300 max-w-90">
           <div class="relative">
-              <img src="{{ $media->image ?? asset('public/storage/default/default.jpg') }}" alt="Media Image"
+              <img src="{{ $media->media ?? $media->image ?? asset('public/storage/default/default.jpg') }}" alt="Media Image"
                   class="w-full h-48 object-cover rounded-t">
 
               <div class="absolute top-2 right-2 flex gap-2">
-                  <form action="{{ route('media.update', $media->id) }}" method="POST"
+                  <form action="{{ route('media.destroy', $media->id) }}" method="POST"
                       onsubmit="return confirm('You want to delete this Media?');">
                       @csrf
                       @method('DELETE')
@@ -21,7 +21,11 @@
                   </a>
 
                   @if ($setcover)
-                      <x-set-cover-button :album-image="$media->imgPath($media->album->image ?? '')" :current-image="$media->imgPath($media->image ?? '')" :id="$media->album->id" />
+                      <a href="{{ $media->media == $media->album->cover ? '#' : route('setCover', $media->id) }}"
+                          title="{{ $media->media == $media->album->cover ? 'Cover set' : 'Add Cover for ' }}{{ $media->album->album_name }}"
+                          class="bg-white p-2 rounded hover:bg-gray-100">
+                          <i class="bi bi-{{ $media->media == $media->album->cover ? 'check-circle-fill text-danger' : 'image' }}"></i>
+                      </a>
                   @endif
               </div>
           </div>

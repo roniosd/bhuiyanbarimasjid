@@ -6,13 +6,10 @@
 
 
         <div class="flex gap-4">
-            <a href="{{ url()->previous() }}">
-                <button type="button"
-                    class="inline-flex items-center gap-2 rounded-lg border border-[#22587a] bg-[#22587a] px-5 py-3 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-green-800 hover:border-green-800 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
-                    <i class="bi bi-arrow-left"></i>
-                    Back
-                </button>
-            </a>
+            <x-button.link-button :url2="url()->previous()">
+                <i class="bi bi-arrow-left"></i>
+                Back
+            </x-button.link-button>
             @if ($url)
                 <!-- Create Button -->
                 <x-button.link-button url="{{ $url }}">

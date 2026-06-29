@@ -33,12 +33,6 @@
                     </tbody>
                 </table>
             </div>
-
-            @if ($committees->hasPages())
-                <div class="d-flex justify-content-center mt-4">
-                    {{ $committees->onEachSide(1)->links('pagination') }}
-                </div>
-            @endif
         </div>
     </section>
 </x-FornAppLayout>

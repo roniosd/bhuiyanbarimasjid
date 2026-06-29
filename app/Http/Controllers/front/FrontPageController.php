@@ -132,8 +132,7 @@ class FrontPageController extends Controller
          ->paginate(6);
 
       $committees = Committee::where('status', 'published')
-         ->oldest()
-         ->paginate(20);
+         ->oldest()->get();
 
 
       $fundlist = Fund::where('status', 'active')->get();

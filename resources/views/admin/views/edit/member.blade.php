@@ -1,205 +1,55 @@
-<x-app-layout title="Edit Member">
-    <div class="content-area">
-        <form action="{{ route('member.update', $member->id) }}" method="POST" enctype="multipart/form-data"
-            class="row theme-form">
-            @csrf
-            @method('PUT')
+<x-form.add-form title="Edit Member" url="member" button="Update Member" :id="$member->id">
+    <x-form.form-input label="Full Name" name="full_name" :value="$member->full_name" required />
 
-            <div class="col-xxl-9 col-xl-8 col-lg-8">
-                <div class="content-inner">
-                    <div class="custom-card">
-                        <div class="custom-card-header">
-                            <div class="heading">
-                                <h1>Edit Member</h1>
-                            </div>
-                            <div class="header-rigth">
-                                <p>Fields marked with * must be filled</p>
-                            </div>
-                            <div class="seeAll">
-                                <a href="{{ route('member.index') }}">See All</a>
-                            </div>
-                        </div>
+    <x-form.form-input label="Date of Birth" name="dob" type="date" :value="$member->dob" required />
 
-                        <div class="custom-card-body">
-                            <h5 class="mb-3">Personal Information</h5>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Full Name <sup>*</sup></label>
-                                        <input type="text" name="full_name" class="form-control" required
-                                            value="{{ old('full_name', $member->full_name) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Date of Birth <sup>*</sup></label>
-                                        <input type="date" name="dob" class="form-control" required
-                                            value="{{ old('dob', $member->dob) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Father's Name <sup>*</sup></label>
-                                        <input type="text" name="father" class="form-control" required
-                                            value="{{ old('father', $member->father) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Mother's Name <sup>*</sup></label>
-                                        <input type="text" name="mother" class="form-control" required
-                                            value="{{ old('mother', $member->mother) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Mobile <sup>*</sup></label>
-                                        <input type="text" name="mobile" class="form-control" required
-                                            value="{{ old('mobile', $member->mobile) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Email</label>
-                                        <input type="email" name="email" class="form-control"
-                                            value="{{ old('email', $member->email) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group custom-form-group">
-                                        <label>Occupation</label>
-                                        <input type="text" name="occupation" class="form-control"
-                                            value="{{ old('occupation', $member->occupation) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group custom-form-group">
-                                        <label>Workspace</label>
-                                        <input type="text" name="workspace" class="form-control"
-                                            value="{{ old('workspace', $member->workspace) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group custom-form-group">
-                                        <label>Education</label>
-                                        <input type="text" name="education" class="form-control"
-                                            value="{{ old('education', $member->education) }}">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group custom-form-group">
-                                        <label>Note</label>
-                                        <textarea name="note" class="form-control" rows="3">{{ old('note', $member->note) }}</textarea>
-                                    </div>
-                                </div>
-                            </div>
+    <x-form.form-input label="Father's Name" name="father" :value="$member->father" required />
 
-                            <hr>
-                            <h5 class="mb-3">Permanent Address</h5>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Village <sup>*</sup></label>
-                                        <input type="text" name="village" class="form-control" required
-                                            value="{{ old('village', optional($member->permanentAddress)->village) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Post <sup>*</sup></label>
-                                        <input type="text" name="post" class="form-control" required
-                                            value="{{ old('post', optional($member->permanentAddress)->post) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Subdistrict <sup>*</sup></label>
-                                        <input type="text" name="subdistrict" class="form-control" required
-                                            value="{{ old('subdistrict', optional($member->permanentAddress)->subdistrict) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>District <sup>*</sup></label>
-                                        <input type="text" name="district" class="form-control" required
-                                            value="{{ old('district', optional($member->permanentAddress)->district) }}">
-                                    </div>
-                                </div>
-                            </div>
+    <x-form.form-input label="Mother's Name" name="mother" :value="$member->mother" required />
 
-                            <hr>
-                            <h5 class="mb-3">Present Address</h5>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Village</label>
-                                        <input type="text" name="preVillage" class="form-control"
-                                            value="{{ old('preVillage', optional($member->presentAddress)->village) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Post</label>
-                                        <input type="text" name="prePost" class="form-control"
-                                            value="{{ old('prePost', optional($member->presentAddress)->post) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>Subdistrict</label>
-                                        <input type="text" name="preSubdistrict" class="form-control"
-                                            value="{{ old('preSubdistrict', optional($member->presentAddress)->subdistrict) }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group custom-form-group">
-                                        <label>District</label>
-                                        <input type="text" name="preDistrict" class="form-control"
-                                            value="{{ old('preDistrict', optional($member->presentAddress)->district) }}">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <x-form.form-input label="Mobile" name="mobile" :value="$member->mobile" required />
 
-            <div class="col-xxl-3 col-xl-4 col-lg-4">
-                <div class="sidebar-widgets">
-                    <x-admin.upload-image name="photo" title="Member Photo" size="Maximum 2 MB"
-                        :img="$member->photo ? 'member/' . $member->photo : 'default/category.png'" />
+    <x-form.form-input label="Email" name="email" type="email" :value="$member->email" />
 
-                    <div class="form-group custom-form-group">
-                        <label>Member Type <sup>*</sup></label>
-                        <select name="member_type" class="form-control" required>
-                            @foreach (['general', 'premium', 'vip', 'social'] as $type)
-                                <option value="{{ $type }}"
-                                    {{ old('member_type', $member->member_type) === $type ? 'selected' : '' }}>
-                                    {{ ucfirst($type) }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
+    <x-form.form-input label="Occupation" name="occupation" :value="$member->occupation" />
 
-                    <div class="form-group custom-form-group">
-                        <label>Status <sup>*</sup></label>
-                        <select name="status" class="form-control" required>
-                            <option value="active" {{ old('status', $member->status) === 'active' ? 'selected' : '' }}>
-                                Active
-                            </option>
-                            <option value="inactive"
-                                {{ old('status', $member->status) === 'inactive' ? 'selected' : '' }}>
-                                Inactive
-                            </option>
-                        </select>
-                    </div>
+    <x-form.form-input label="Workspace" name="workspace" :value="$member->workspace" />
 
-                    <button type="submit" class="btn theme-btn">
-                        <i class="bi bi-pencil-square me-3"></i>
-                        Update Member
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</x-app-layout>
+    <x-form.form-input label="Education" name="education" :value="$member->education" />
+
+    <x-form.form-textarea label="Note" name="note" rows="3">
+        {{ $member->note }}
+    </x-form.form-textarea>
+
+    <x-form.form-input label="Permanent Village" name="village" :value="optional($member->permanentAddress)->village" required />
+
+    <x-form.form-input label="Permanent Post" name="post" :value="optional($member->permanentAddress)->post" required />
+
+    <x-form.form-input label="Permanent Subdistrict" name="subdistrict" :value="optional($member->permanentAddress)->subdistrict" required />
+
+    <x-form.form-input label="Permanent District" name="district" :value="optional($member->permanentAddress)->district" required />
+
+    <x-form.form-input label="Present Village" name="preVillage" :value="optional($member->presentAddress)->village" />
+
+    <x-form.form-input label="Present Post" name="prePost" :value="optional($member->presentAddress)->post" />
+
+    <x-form.form-input label="Present Subdistrict" name="preSubdistrict" :value="optional($member->presentAddress)->subdistrict" />
+
+    <x-form.form-input label="Present District" name="preDistrict" :value="optional($member->presentAddress)->district" />
+
+    <x-slot name="sitecontent">
+        <x-imginputshow name="photo" title="Member Photo" size="Maximum 2 MB" :img="$member->photo" />
+
+        <x-form.form-select label="Member Type" name="member_type" :value="$member->member_type" :options="[
+            'general' => 'General',
+            'premium' => 'Premium',
+            'vip' => 'VIP',
+            'social' => 'Social',
+        ]" required />
+
+        <x-form.form-select label="Status" name="status" :value="$member->status" :options="[
+            'active' => 'Active',
+            'inactive' => 'Inactive',
+        ]" required />
+    </x-slot>
+</x-form.add-form>

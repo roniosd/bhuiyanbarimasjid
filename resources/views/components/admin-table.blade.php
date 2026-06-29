@@ -10,7 +10,7 @@
     'showHeader' => true,
 ])
 
-<div class="bg-white shadow-md rounded-xl">
+<div class="bg-white shadow-md border border-slate-300 rounded-xl">
     @if ($showHeader)
         <x-list-header :title="$title" :url="$url" />
     @endif
@@ -37,16 +37,16 @@
                             @endphp
 
                             <td class="py-1 px-4 text-justify group">
-                                @if ($accessKey === 'image' || $accessKey === 'icon' || $accessKey === 'photo' || $accessKey === 'photo_url')
-                                    <div class="relative">
+                                @if ($accessKey === 'image' || $accessKey === 'icon' || $accessKey === 'photo' || $accessKey === 'featured_photo' || $accessKey === 'photo_url')
+                                    <div class=" ">
                                         <img src="{{ $value ?? asset('public/storage/default/default.jpg') }}"
                                             alt="Photo" class="w-12 h-12 object-cover rounded">
 
-                                        <div class="absolute left-20 top-0 z-50 hidden group-hover:block">
+                                        <div class="absolute left-40 top-0 pb-5 z-50 hidden group-hover:block w-fit">
 
-                                            <div class="bg-white p-2 rounded-xl shadow-2xl border">
+                                            <div class="bg-white p-2 rounded-xl shadow-2xl border w-fit">
                                                 <img src="{{ $value ?? asset('public/storage/default/default.jpg') }}"
-                                                    alt="Preview" class="size-100 object-cover rounded-lg">
+                                                    alt="Preview" class="w-55 h-auto object-cover rounded-lg">
                                             </div>
 
                                         </div>

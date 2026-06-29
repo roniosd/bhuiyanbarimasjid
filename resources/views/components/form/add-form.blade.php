@@ -7,9 +7,12 @@
     'title' => '',
     'seeall' => true,
     'button' => null,
+    'action' => null,
 ])
 @php
-    if ($url2) {
+    if ($action) {
+        $action = $action;
+    } elseif ($url2) {
         $action = route($url2);
     } elseif ($id === '' && $url) {
         $action = route($url . '.store');
@@ -26,8 +29,8 @@
                 @method('PUT')
             @endif
             <!-- Left Side: Form Fields -->
-            <div class="{{ $class }} space-y-6">
-                <div class="bg-white shadow-md rounded-2xl p-5">
+            <div class="{{ $class }}">
+                <div class="bg-white shadow-md rounded-2xl px-5 pt-3 pb-5 border border-slate-300">
                     <x-create-header :title="$title" :url="$url && $seeall ? $url . '.index' : null" />
 
 
@@ -48,7 +51,7 @@
             <!-- Right Side: Profile Image & Status/Role -->
             @isset($sitecontent)
                 <div class="col-span-1">
-                    <div class="bg-white shadow-md rounded-2xl p-3 flex flex-col gap-4">
+                    <div class="bg-white shadow-md rounded-2xl p-3 flex flex-col gap-4 border border-slate-300">
                         {{ $sitecontent }}
 
                         <div class="flex justify-center items-center mt-2">

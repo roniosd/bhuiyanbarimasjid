@@ -1,5 +1,7 @@
 <x-app-layout title="ImageGallery List">
     <div class="content-area">
+        <x-list-header title="ImageGallery List" />
+
         <!-- Folder List -->
         <div class="mb-5 container pt-5">
             <h2 class="h5 fw-bold mb-3">📁 Select a Folder</h2>
