@@ -20,38 +20,11 @@
     ]" required />
 
     <x-slot name="listItems">
-        <div class="container">
-            <div class="card border-0">
-                <div class="card-body p-4">
-                    <div class="table-responsive">
-                        <table class="table align-middle table-hover text-center">
-                            <thead>
-                                <tr>
-                                    <th>Role Name</th>
-                                    <th>Method</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($permissions as $permission)
-                                    <tr>
-                                        <td class="px-4 py-2">{{ $permission->role_name }}</td>
-                                        <td class="px-4 py-2 text-justify">
-                                            @foreach (explode(',', $permission->methods) as $index => $method)
-                                                <span class="text-black">{{ $index + 1 }}.</span>
-                                                {{ ucwords(str_replace(['.', '_', '"', '[', ']'], ' ', $method)) }},
-                                            @endforeach
-                                        </td>
-                                        <x-admin.action-button id="{{ $permission->id }}" edit="permission.edit"
-                                            delete="permission.destroy" />
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <x-admin-table isDatatable="{{ false }}" :columns="['Role Name', 'Methods', 'Actions']" :row-keys="['role_name', 'methods', 'actions']" :links="[
+            'edit' => 'permission.edit',
+            'delete' => 'permission.destroy',
+        ]"
+            :data="$permissions" />
     </x-slot>
 </x-form.add-form>
 
