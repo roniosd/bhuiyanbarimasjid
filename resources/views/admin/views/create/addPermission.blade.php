@@ -20,11 +20,11 @@
     ]" required />
 
     <x-slot name="listItems">
-        <x-admin-table isDatatable="{{ false }}" :columns="['Role Name', 'Methods', 'Actions']" :row-keys="['role_name', 'methods', 'actions']" :links="[
-            'edit' => 'permission.edit',
-            'delete' => 'permission.destroy',
-        ]"
-            :data="$permissions" />
+        <x-admin-table showHeader="{{ false }}" isDatatable="{{ false }}" :columns="['Role Name', 'Methods', 'Actions']"
+            :row-keys="['role_name', 'methods', 'actions']" :links="[
+                'edit' => 'permission.edit',
+                'delete' => 'permission.destroy',
+            ]" :data="$permissions" />
     </x-slot>
 </x-form.add-form>
 
