@@ -20,7 +20,7 @@
     ]" required />
 
     <x-slot name="listItems">
-        <x-admin-table showHeader="{{ false }}" isDatatable="{{ false }}" :columns="['Role Name', 'Methods', 'Actions']"
+        <x-admin-table :limit="10000" showHeader="{{ false }}" isDatatable="{{ false }}" :columns="['Role Name', 'Methods', 'Actions']"
             :row-keys="['role_name', 'methods', 'actions']" :links="[
                 'edit' => 'permission.edit',
                 'delete' => 'permission.destroy',

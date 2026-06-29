@@ -5,10 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\AccessTrait;
 use App\FileHandlerTrait;
 use App\Http\Controllers\Controller;
-use App\Models\Module;
 use App\Models\Permission;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 class PermissionController extends Controller
 {
@@ -30,7 +28,17 @@ class PermissionController extends Controller
     {
         if ($this->hasPermission()) {
             $modules = $this->routeNames();
-            $permissions = Permission::all();
+            $permissions = Permission::all()->map(function ($permission) {
+                $permission->methods = collect(explode(',', $permission->methods))
+                    ->map(function ($method, $index) {
+                        return ($index + 1)
+                            . ucwords(str_replace(['.', '_', '"', '[', ']'], ' ', trim($method)));
+                    })
+                    ->implode(', ');
+
+                return $permission;
+            });
+            ;
             return view('admin.views.create.addPermission', compact('modules', 'permissions'));
         } else {
             return back()->with('error', "Access denied. You are not authorized to perform this action.");

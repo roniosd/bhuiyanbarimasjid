@@ -1,4 +1,4 @@
-<x-form.add-form title="Add Committee Year" url="committee" button="Add Committee">
+<x-form.add-form title="Add Committee" url="committee" button="Add Committee">
     <x-form.form-select label="Session" name="session_id" :options="$sessions->pluck('session_name', 'id')->prepend('Choose a Session', '')" required />
 
     <x-form.form-input label="Name" name="name" placeholder="Enter Name" />
@@ -12,7 +12,7 @@
     <x-form.form-input label="Membership fee" name="membership_fee" placeholder="Enter membership fee" />
 
     <x-slot name="sitecontent">
-        <x-imginputshow name="photo" title="Committee Image" size="2020 X 650px" />
+        <x-imginputshow name="photo" title="Member Image" size="2020 X 650px" />
 
         <x-form.form-select label="Select Status" name="status" :options="[
             'published' => 'Published',

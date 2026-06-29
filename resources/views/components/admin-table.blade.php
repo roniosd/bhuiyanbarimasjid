@@ -37,7 +37,12 @@
                             @endphp
 
                             <td class="py-1 px-4 text-justify group">
-                                @if ($accessKey === 'image' || $accessKey === 'icon' || $accessKey === 'photo' || $accessKey === 'featured_photo' || $accessKey === 'photo_url')
+                                @if (
+                                    $accessKey === 'image' ||
+                                        $accessKey === 'icon' ||
+                                        $accessKey === 'photo' ||
+                                        $accessKey === 'featured_photo' ||
+                                        $accessKey === 'photo_url')
                                     <div class=" ">
                                         <img src="{{ $value ?? asset('public/storage/default/default.jpg') }}"
                                             alt="Photo" class="w-12 h-12 object-cover rounded">
@@ -89,6 +94,8 @@
                                 @elseif($accessKey === 'actions')
                                     <x-button.action-button id="{{ $row->id }}" edit="{{ $links['edit'] ?? '' }}"
                                         delete="{{ $links['delete'] ?? '' }}" show="{{ $links['show'] ?? '' }}" />
+                                @elseif ($key === 'task')
+                                    {!! $value !!}
                                 @else
                                     {{ Str::limit($value ?? '-', $limit) }}
                                 @endif

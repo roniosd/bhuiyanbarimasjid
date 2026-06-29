@@ -15,7 +15,7 @@
         placeholder="Enter membership fee" />
 
     <x-slot name="sitecontent">
-        <x-imginputshow name="photo" title="Committee Image" size="2020 X 650px" :img="$committee->photo" />
+        <x-imginputshow name="photo" title="Member Image" size="2020 X 650px" :img="$committee->photo" />
 
         <x-form.form-select label="Select Status" name="status" :value="$committee->status" :options="[
             'published' => 'Published',
