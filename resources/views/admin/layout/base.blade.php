@@ -47,7 +47,7 @@
     <footer class="w-full border-t border-gray-200 py-4 text-center text-sm text-gray-600 mt-5">
         <p>
             Copyright &copy; {{ date('Y') }}
-            <span class="font-semibold text-black">Larong</span>.
+            <span class="font-semibold text-black">BBBMJM</span>.
             All rights reserved.
         </p>
     </footer>

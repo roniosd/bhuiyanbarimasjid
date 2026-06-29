@@ -6,8 +6,8 @@
 
                 <div class="text-center mb-8">
 
-                    <img src="{{ $setting->logo ?? asset('public/storage/default/logo.png') }}"
-                        class="h-16 mx-auto mb-4" alt="Larong">
+                    <img src="{{ $setting->logo ?? asset('public/storage/default/logo.png') }}" class="h-16 mx-auto mb-4"
+                        alt="BBBMJM">
 
                     <h2 class="text-3xl font-bold text-gray-800">
                         Admin Login

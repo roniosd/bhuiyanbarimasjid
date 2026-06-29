@@ -1,127 +1,79 @@
 <x-app-layout title="Dashboard">
-    <div class="">
-        <div class=" py-4">
+    <div class="space-y-6">
+        <div>
+            <h1 class="text-2xl font-semibold text-gray-800">Dashboard</h1>
+            <p class="text-sm text-gray-500">Quick overview of website activity.</p>
+        </div>
 
-            {{-- Overview Cards --}}
-            <div class="row mb-4">
-                <div class="col-md-3">
-                    <div class="card text-white bg-success shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Total22222 Donations</h5>
-                            <p class="card-text fs-4">৳ 120,450</p>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <p class="text-sm text-gray-500">Total Donation</p>
+                <h2 class="text-2xl font-semibold text-gray-800">BDT {{ number_format($totalDonation, 2) }}</h2>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-4">
+                <p class="text-sm text-gray-500">Members</p>
+                <h2 class="text-2xl font-semibold text-gray-800">{{ number_format($totalMembers) }}</h2>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-4">
+                <p class="text-sm text-gray-500">Students</p>
+                <h2 class="text-2xl font-semibold text-gray-800">{{ number_format($totalStudents) }}</h2>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-4">
+                <p class="text-sm text-gray-500">Pending Feedback</p>
+                <h2 class="text-2xl font-semibold text-gray-800">{{ number_format($pendingFeedback) }}</h2>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h3 class="font-semibold text-gray-800 mb-3">Recent Donations</h3>
+                <div class="space-y-3">
+                    @forelse ($recentDonations as $donation)
+                        <div class="flex justify-between gap-3 border-b pb-2 last:border-0 last:pb-0">
+                            <div>
+                                <p class="font-medium text-gray-700">{{ $donation->donar ?? 'Anonymous' }}</p>
+                                <p class="text-xs text-gray-500">{{ $donation->fund->title ?? 'General' }}</p>
+                            </div>
+                            <p class="font-semibold text-gray-800">BDT {{ number_format($donation->amount, 2) }}</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card text-white bg-primary shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Upcoming Events</h5>
-                            <p class="card-text fs-4">5</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card text-white bg-info shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Active Volunteers</h5>
-                            <p class="card-text fs-4">42</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card text-white bg-warning shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Pending Tasks</h5>
-                            <p class="card-text fs-4">8</p>
-                        </div>
-                    </div>
+                    @empty
+                        <p class="text-sm text-gray-500">No donations found.</p>
+                    @endforelse
                 </div>
             </div>
 
-            {{-- Calendar & Chart Row --}}
-            <div class="row mb-4">
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-header bg-light fw-bold">Upcoming Events</div>
-                        <div class="card-body">
-                            <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Friday Sermon
-                                    <span class="badge bg-secondary">Apr 18</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Ramadan Iftar Program
-                                    <span class="badge bg-secondary">Apr 22</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Quran Class Launch
-                                    <span class="badge bg-secondary">Apr 25</span>
-                                </li>
-                            </ul>
+            <div class="bg-white rounded-lg shadow p-4">
+                <h3 class="font-semibold text-gray-800 mb-3">Upcoming Events</h3>
+                <div class="space-y-3">
+                    @forelse ($upcomingEvents as $event)
+                        <div class="border-b pb-2 last:border-0 last:pb-0">
+                            <p class="font-medium text-gray-700">{{ $event->title }}</p>
+                            <p class="text-xs text-gray-500">
+                                {{ \Carbon\Carbon::parse($event->start_date)->format('d M Y') }}
+                            </p>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-header bg-light fw-bold">Donation Trend</div>
-                        <div class="card-body">
-                            <canvas id="donationChart" height="200"></canvas>
-                        </div>
-                    </div>
+                    @empty
+                        <p class="text-sm text-gray-500">No upcoming events.</p>
+                    @endforelse
                 </div>
             </div>
 
-            {{-- Announcements & Donations --}}
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-header bg-light fw-bold">Latest Announcements</div>
-                        <div class="card-body">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <strong>New Volunteer Drive Started</strong>
-                                    <br>
-                                    <small class="text-muted">2 days ago</small>
-                                </li>
-                                <li class="list-group-item">
-                                    <strong>Monthly Report Published</strong>
-                                    <br>
-                                    <small class="text-muted">1 week ago</small>
-                                </li>
-                                <li class="list-group-item">
-                                    <strong>Ramadan Program Schedule Announced</strong>
-                                    <br>
-                                    <small class="text-muted">3 days ago</small>
-                                </li>
-                            </ul>
+            <div class="bg-white rounded-lg shadow p-4">
+                <h3 class="font-semibold text-gray-800 mb-3">Latest Posts</h3>
+                <div class="space-y-3">
+                    @forelse ($latestPosts as $post)
+                        <div class="border-b pb-2 last:border-0 last:pb-0">
+                            <p class="font-medium text-gray-700">{{ $post->title }}</p>
+                            <p class="text-xs text-gray-500">{{ optional($post->created_at)->format('d M Y') }}</p>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-header bg-light fw-bold">Recent Donations</div>
-                        <div class="card-body">
-                            <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>Md. Karim</span>
-                                    <span class="fw-bold">৳ 5,000</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>Ayesha Sultana</span>
-                                    <span class="fw-bold">৳ 2,000</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span>Anonymous</span>
-                                    <span class="fw-bold">৳ 10,000</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    @empty
+                        <p class="text-sm text-gray-500">No posts found.</p>
+                    @endforelse
                 </div>
             </div>
-
         </div>
     </div>
 </x-app-layout>
