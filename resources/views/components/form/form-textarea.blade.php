@@ -7,5 +7,5 @@
             <sup class="text-red-500">*</sup>
         @endif
     </label>
-    <textarea name="{{ $name }}" id="{{ $id }}" rows="{{ $rows }}" class="w-full form-input">{{ old($name) ?? $slot }}</textarea>
+    <textarea name="{{ $name }}" id="{{ $id }}" rows="{{ $rows }}" class="w-full form-input rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 border">{{ old($name) ?? $slot }}</textarea>
 </div>

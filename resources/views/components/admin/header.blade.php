@@ -121,11 +121,9 @@
                             </x-dropdown-link> --}}
 
                             <!-- Logout -->
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
+                            <div>
 
                                 <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault(); this.closest('form').submit();"
                                     class="mt-1 flex items-center gap-3 rounded-xl px-4 py-3 text-slate-700 hover:bg-red-50 transition duration-200">
 
                                     <div class="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
@@ -148,7 +146,7 @@
 
                                 </x-dropdown-link>
 
-                            </form>
+                            </div>
 
                         </div>
 

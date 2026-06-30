@@ -62,6 +62,7 @@ class SliderController extends Controller
             'btn_link',
             'category',
             'status',
+            'btn_position',
             'description',
         ];
         foreach ($files as $file)
@@ -117,7 +118,16 @@ class SliderController extends Controller
             $data['photo'] = $this->uploadPhoto($request->file('photo'), 'slider');
         }
 
-        $fields = ['title', 'position', 'btn_label', 'btn_link', 'category', 'status', 'description'];
+        $fields = [
+            'title',
+            'position',
+            'btn_label',
+            'btn_link',
+            'category',
+            'status',
+            'description',
+            'btn_position',
+        ];
 
         foreach ($fields as $field) {
             if ($request->$field) {

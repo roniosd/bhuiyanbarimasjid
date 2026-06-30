@@ -16,6 +16,7 @@ class Slider extends Model
         'status',
         'description',
         'photo',
+        'btn_position',
     ];
     public function getPhotoAttribute($value)
     {

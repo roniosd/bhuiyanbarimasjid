@@ -94,7 +94,7 @@
                                 @elseif($accessKey === 'actions')
                                     <x-button.action-button id="{{ $row->id }}" edit="{{ $links['edit'] ?? '' }}"
                                         delete="{{ $links['delete'] ?? '' }}" show="{{ $links['show'] ?? '' }}" />
-                                @elseif ($key === 'task')
+                                @elseif ($key === 'task' || $key === 'description')
                                     {!! $value !!}
                                 @else
                                     {{ Str::limit($value ?? '-', $limit) }}

@@ -1,5 +1,18 @@
 @php
     $sections = json_decode($homepageSetting->sections, true);
+    $positions = [
+        'top-left' => 'justify-content-start align-items-start',
+        'top-center' => 'justify-content-center align-items-start',
+        'top-right' => 'justify-content-end align-items-start',
+
+        'middle-left' => 'justify-content-start align-items-center',
+        'middle-center' => 'justify-content-center align-items-center',
+        'middle-right' => 'justify-content-end align-items-center',
+
+        'bottom-left' => 'justify-content-start align-items-end',
+        'bottom-center' => 'justify-content-center align-items-end',
+        'bottom-right' => 'justify-content-end align-items-end',
+    ];
 @endphp
 <x-FornAppLayout :$setting>
     <main>
@@ -7,13 +20,35 @@
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     @forelse ($sliders as $slider)
-                        <div class="swiper-slide ">
-                            <img class="img-fluid" src="{{ $slider->photo ?? asset('/public/storage/default/category.png') }}"
-                                alt="slider-{{ $slider->position }}" />
+                        <div class="position-relative swiper-slide">
+                            <img class="img-fluid"
+                                src="{{ $slider->photo ?? asset('/public/storage/default/category.png') }}"
+                                alt="slider-{{ $slider->position }}">
+
+                            {{-- Centered Title & Description --}}
+                            <div class="position-absolute top-50  translate-middle-y text-white ps-5 text-start"
+                                style="left: 20%;">
+                                @if ($slider->title)
+                                    <h1>{{ $slider->title }}</h1>
+                                @endif
+
+                                @if ($slider->description)
+                                    <p>{!! $slider->description !!}</p>
+                                @endif
+                            </div>
+                            {{-- Button Position --}}
+                            @if ($slider->btn_label && $slider->btn_link)
+                                <div
+                                    class="position-absolute top-0 inset-s-0 w-100 h-100 d-flex p-4 {{ $positions[$slider->btn_position] ?? 'justify-content-center align-items-center' }}">
+                                    <a href="{{ $slider->btn_link }}" class="btn btn-success">
+                                        {{ $slider->btn_label }}
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                     @empty
                         <div class="swiper-slide hero_img"style="height: 200px">
-                           
+
                         </div>
                     @endforelse
                 </div>
@@ -39,13 +74,13 @@
                             <input type="hidden" name="doner" value="" id="">
 
                             <div class="col-lg-3  col-12">
-                                <input name="contact" type="text" class="form-control" id="validationCustom05" required
-                                    placeholder="মোবাইল / ইমেইল" />
+                                <input name="contact" type="text" class="form-control" id="validationCustom05"
+                                    required placeholder="মোবাইল / ইমেইল" />
                             </div>
 
                             <div class="col-lg-3  col-12">
-                                <input name="amount" type="number" class="form-control" id="validationCustom06" required
-                                    min="1000" placeholder="অনুদানের পরিমাণ" />
+                                <input name="amount" type="number" class="form-control" id="validationCustom06"
+                                    required min="1000" placeholder="অনুদানের পরিমাণ" />
                             </div>
 
                             <div class="col-lg-3  col-12">
@@ -63,16 +98,15 @@
 
             <div class="row">
                 <div class="col-12 col-md-6 col-sm-12 col-lg-6">
-                    <img class="img-fluid"
-                        src="{{ $aboutUs->photo ?? asset('/public/storage/default/category.png') }}"
-                        alt="{{$aboutUs->title}}" />
+                    <img class="img-fluid" src="{{ $aboutUs->photo ?? asset('/public/storage/default/category.png') }}"
+                        alt="{{ $aboutUs->title }}" />
                 </div>
                 <div class="deteails col-12 col-md-6 col-sm-12 col-lg-5 mt-5 mt-lg-0 mt-md-0">
                     <h1>{{ $aboutUs->title }}</h1>
                     <div>
                         {!! $aboutUs->shortText($aboutUs->description, 500) !!}
                     </div>
-                    <a href="{{$aboutUs->slug}}" class="btn btn-outline-success pt-2 btn-3 mt-lg-4 mt-md-1">
+                    <a href="{{ $aboutUs->slug }}" class="btn btn-outline-success pt-2 btn-3 mt-lg-4 mt-md-1">
                         বিস্তারিত জানুন
                     </a>
                 </div>
@@ -223,7 +257,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col col-12 col-sm-12 col-md-12 col-lg-6">
-                        <img src="{{ asset('/public/storage/default/contact.png') }}" class="img-fluid" alt="" />
+                        <img src="{{ asset('/public/storage/default/contact.png') }}" class="img-fluid"
+                            alt="" />
                     </div>
                     <div class="col main-body col-12 col-sm-12 col-md-12 col-lg-6">
                         <div class="col col-12 col-sm-12 col-md-12 col-lg-6 m-md-auto"></div>
