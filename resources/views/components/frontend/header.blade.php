@@ -3,8 +3,8 @@
     <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center py-3 gap-0 gap-lg-5">
         <div>
             <a href="{{ route('homePage') }}" class="logo_container">
-                <img class="img-fluid" src="{{ $setting->logo ?? asset('/public/storage/default/logo.png') }}" alt="header"
-                    style="max-height: 80px;" />
+                <img class="img-fluid" src="{{ $setting->logo ?? asset('/public/storage/default/logo.png') }}"
+                    alt="header" style="max-height: 80px;" />
             </a>
         </div>
 
@@ -40,7 +40,7 @@
                             $dropdown = $hasSubmenu ? 'dropdown-toggle' : '';
                             $isActive = '';
 
-                            if (!$hasSubmenu && $menu->place == 'header') {
+                            if (!$hasSubmenu && $menu->place == 'header' && $menu->route) {
                                 $link =
                                     $menu->route_type === 'page'
                                         ? route('page.show', $menu->page->slug ?? '')
