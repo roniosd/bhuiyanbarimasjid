@@ -32,18 +32,6 @@
                                         <td><strong>পেশা</strong></td>
                                         <td>{{ $member->occupation ?? '-' }}</td>
                                     </tr>
-                                    @if ($member->education)
-                                        <tr>
-                                            <td><strong>শিক্ষা</strong></td>
-                                            <td>{{ $member->education ?? '-' }}</td>
-                                        </tr>
-                                    @endif
-                                    @if ($member->workspace)
-                                        <tr>
-                                            <td><strong>কর্মস্থল</strong></td>
-                                            <td>{{ $member->workspace ?? '-' }}</td>
-                                        </tr>
-                                    @endif
 
 
                                     <tr>
