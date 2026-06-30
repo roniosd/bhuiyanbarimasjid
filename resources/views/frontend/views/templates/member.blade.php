@@ -32,16 +32,19 @@
                                         <td><strong>পেশা</strong></td>
                                         <td>{{ $member->occupation ?? '-' }}</td>
                                     </tr>
+                                    @if ($member->education)
+                                        <tr>
+                                            <td><strong>শিক্ষা</strong></td>
+                                            <td>{{ $member->education ?? '-' }}</td>
+                                        </tr>
+                                    @endif
+                                    @if ($member->workspace)
+                                        <tr>
+                                            <td><strong>কর্মস্থল</strong></td>
+                                            <td>{{ $member->workspace ?? '-' }}</td>
+                                        </tr>
+                                    @endif
 
-                                    <tr>
-                                        <td><strong>শিক্ষা</strong></td>
-                                        <td>{{ $member->education ?? '-' }}</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><strong>কর্মস্থল</strong></td>
-                                        <td>{{ $member->workspace ?? '-' }}</td>
-                                    </tr>
 
                                     <tr>
                                         <td><strong>মোবাইল</strong></td>
@@ -49,12 +52,14 @@
                                             {{ substr($member->mobile, 0, 3) . '****' . substr($member->mobile, -4) }}
                                         </td>
                                     </tr>
+                                    @if ($collector->email)
+                                        <tr>
+                                            <td><strong>ইমেইল</strong></td>
+                                            <td>{{ substr($collector->email, 0, 3) . '****' . substr($collector->email, -4) }}
+                                            </td>
+                                        </tr>
+                                    @endif
 
-                                    <tr>
-                                        <td><strong>ইমেইল</strong></td>
-                                        <td>{{ substr($collector->email, 0, 3) . '****' . substr($collector->email, -4) }}
-                                        </td>
-                                    </tr>
                                 </table>
 
 
