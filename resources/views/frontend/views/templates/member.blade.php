@@ -52,7 +52,8 @@
 
                                     <tr>
                                         <td><strong>ইমেইল</strong></td>
-                                        <td>{{ $member->email ?? '-' }}</td>
+                                        <td>{{ substr($collector->email, 0, 3) . '****' . substr($collector->email, -4) }}
+                                        </td>
                                     </tr>
                                 </table>
 
