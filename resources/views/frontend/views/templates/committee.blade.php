@@ -22,7 +22,7 @@
                                 </td>
                                 <td>{{ $committee->designation ?? '-' }}</td>
                                 <td>{{ $committee->name ?? '-' }}</td>
-                                <td> {{ substr($committee->mobile_number, 0, 3) . '****' . substr($committee->mobile_number, -4) }}
+                                <td> {{ substr($committee->mobile_number, 0, 3) . '****' . substr($committee->mobile_number, -2) }}
                                 </td>
                             </tr>
                         @empty

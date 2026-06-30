@@ -32,20 +32,11 @@
                                         <td>{{ $member->occupation ?? '-' }}</td>
                                     </tr>
 
-                                    <tr>
-                                        <td><strong>শিক্ষা</strong></td>
-                                        <td>{{ $member->education ?? '-' }}</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><strong>কর্মস্থল</strong></td>
-                                        <td>{{ $member->workspace ?? '-' }}</td>
-                                    </tr>
 
                                     <tr>
                                         <td><strong>মোবাইল</strong></td>
                                         <td>
-                                            {{ substr($member->mobile, 0, 3) . '****' . substr($member->mobile, -4) }}
+                                            {{ substr($member->mobile, 0, 3) . '****' . substr($member->mobile, -2) }}
                                         </td>
                                     </tr>
 
@@ -54,18 +45,6 @@
                                         <td>{{ $member->email ?? '-' }}</td>
                                     </tr>
                                 </table>
-
-                                @if ($member->note)
-                                    <div class="mt-3 p-2 rounded" style="background:#f8f9fa;">
-                                        <small>{{ $member->note }}</small>
-                                    </div>
-                                @endif
-                            </div>
-
-                            <div class="card-footer bg-white border-0 text-center">
-                                <small class="text-muted">
-                                    সদস্যের ধরন: {{ $member->member_type }}
-                                </small>
                             </div>
                         </div>
                     </div>

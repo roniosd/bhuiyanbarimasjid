@@ -55,7 +55,7 @@
                                     @if ($member->email)
                                         <tr>
                                             <td><strong>ইমেইল</strong></td>
-                                            <td>{{ substr($member->email, 0, 3) . '****' . substr($member->email, -4) }}
+                                            <td>{{ substr($member->email, 0, 3) . '****' . substr($member->email, -2) }}
                                             </td>
                                         </tr>
                                     @endif
