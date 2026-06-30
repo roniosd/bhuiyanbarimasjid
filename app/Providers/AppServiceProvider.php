@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Contact;
 use App\Models\HomepageSetting;
+use App\Models\Menu;
 use App\Models\Setting;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
@@ -33,5 +34,6 @@ class AppServiceProvider extends ServiceProvider
         View::share('setting', Setting::first());
         View::share('homepageSetting', HomepageSetting::first());
         View::share('contact', Contact::first());
+        View::share('menus', Menu::where('status', 'active')->get());
     }
 }
