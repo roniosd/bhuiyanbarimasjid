@@ -152,6 +152,9 @@ Route::middleware(['auth:admin'])->group(function () {
 
 
     Route::get('/gallery', [ImageGalleryController::class, 'index'])->name('gallery.all');
+    Route::delete('/gallery/{image}', [ImageGalleryController::class, 'destroy'])
+        ->where('image', '.*')
+        ->name('gallery.delete');
 
     //! Logout Route
     Route::get('/logout', [LogoutController::class, 'index'])->name('logout');

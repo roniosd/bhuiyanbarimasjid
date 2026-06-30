@@ -35,4 +35,19 @@ class ImageGalleryController extends Controller
 
         return view('admin.views.list.ImageGallery', compact('directories', 'selectedFolder', 'images'));
     }
+
+    public function destroy(string $image)
+    {
+        if (str_contains($image, '..')) {
+            return back()->with('error', 'Invalid path.');
+        }
+
+        if (!Storage::disk('public')->exists($image)) {
+            return back()->with('error', 'File not found.');
+        }
+
+        Storage::disk('public')->delete($image);
+
+        return back()->with('success', 'Image deleted successfully!');
+    }
 }
