@@ -52,10 +52,10 @@
                                             {{ substr($member->mobile, 0, 3) . '****' . substr($member->mobile, -4) }}
                                         </td>
                                     </tr>
-                                    @if ($collector->email)
+                                    @if ($member->email)
                                         <tr>
                                             <td><strong>ইমেইল</strong></td>
-                                            <td>{{ substr($collector->email, 0, 3) . '****' . substr($collector->email, -4) }}
+                                            <td>{{ substr($member->email, 0, 3) . '****' . substr($member->email, -4) }}
                                             </td>
                                         </tr>
                                     @endif
