@@ -1008,14 +1008,17 @@ footer .copyright {
 .top_header {
     background: #03673c;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .top_header p {
     font-size: 42px;
     font-weight: 400;
-    line-height: 63px;
     text-align: center;
+    margin: 0;
+    padding: 0;
     color: #d4ffea;
-    padding-top: 20px;
     text-decoration: none;
     font-family: "Noto Serif Bengali", sans-serif;
 }

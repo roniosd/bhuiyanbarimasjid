@@ -19,7 +19,8 @@ class Page extends Model
         'status',
         'post_id',
         'template',
-        'widget'
+        'widget',
+        'type'
     ];
 
     public function getPhotoAttribute($value)

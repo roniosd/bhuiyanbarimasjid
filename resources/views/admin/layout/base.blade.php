@@ -234,6 +234,19 @@
         function clearAll() {
             document.querySelectorAll('.permission-checkbox').forEach(cb => cb.checked = false);
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const template = document.getElementById('template');
+            const memberTypeWrapper = document.getElementById('memberTypeWrapper');
+
+            function toggleMemberType() {
+                memberTypeWrapper.style.display = template.value === 'member' || template.value === 'committee' ?
+                    'block' : 'none';
+            }
+
+            toggleMemberType();
+            template.addEventListener('change', toggleMemberType);
+        });
     </script>
 </body>
 

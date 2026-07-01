@@ -131,8 +131,7 @@ class FrontPageController extends Controller
       $events = Event::where('status', 'published')
          ->paginate(6);
 
-      $committees = Committee::where('status', 'published')
-         ->oldest()->get();
+
 
 
       $fundlist = Fund::where('status', 'active')->get();
@@ -156,6 +155,7 @@ class FrontPageController extends Controller
 
       $template = $pageDetails->template ?? 'default';
       $collectors = Collector::latest()->paginate(9);
+      $committees = [];
       $videos = [];
       $members = [];
 
@@ -163,9 +163,13 @@ class FrontPageController extends Controller
          $videos = $this->getYoutubeVideos();
       }
       if ($template === 'member') {
-         $members = Member::where('member_type', $pageDetails->member_type)
+         $members = Member::where('member_type', $pageDetails->type)
             ->latest()
             ->paginate(9);
+      }
+      if ($template === 'member') {
+         $committees = Committee::where(['status' => 'published', 'type' => $pageDetails->type])
+            ->oldest()->get();
       }
 
 

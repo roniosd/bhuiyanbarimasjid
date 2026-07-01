@@ -15,14 +15,19 @@
     <x-slot name="sitecontent">
         <x-form.form-input label="Enter Widget" name="widget" placeholder="Enter attachment" />
 
-        <x-form.form-select label="Enter your Template" name="template" id="template" :options="collect($templates)->mapWithKeys(fn ($template) => [$template => $template])->prepend('Choose Template', '')" />
+        <x-form.form-select label="Enter your Template" name="template" id="template" :options="collect($templates)
+            ->mapWithKeys(fn($template) => [$template => $template])
+            ->prepend('Choose Template', '')" />
 
         <div id="memberTypeWrapper" style="display: none;">
-            <x-form.form-select label="Member Type" name="member_type" :options="[
+            <x-form.form-select label="Content Type" name="type" :options="[
+                '' => 'Select Content Type',
                 'general' => 'General',
                 'premium' => 'Premium',
                 'vip' => 'VIP',
                 'social' => 'Social',
+                'advisory_committee' => 'Advisory committee',
+                'executive_committee' => 'Executive committee',
             ]" />
         </div>
 
@@ -35,17 +40,3 @@
         <x-imginputshow name="photo" title="Add Page Image" size="1320 X 535px" />
     </x-slot>
 </x-form.add-form>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const template = document.getElementById('template');
-        const memberTypeWrapper = document.getElementById('memberTypeWrapper');
-
-        function toggleMemberType() {
-            memberTypeWrapper.style.display = template.value === 'member' ? 'block' : 'none';
-        }
-
-        toggleMemberType();
-        template.addEventListener('change', toggleMemberType);
-    });
-</script>

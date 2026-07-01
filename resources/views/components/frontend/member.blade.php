@@ -1,5 +1,5 @@
 <x-FornAppLayout>
-    <section class="top_header text-center py-3">
+    <section class="top_header text-center">
         <p>{{ $pageDetails->title }}</p>
     </section>
 

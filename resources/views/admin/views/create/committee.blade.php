@@ -11,6 +11,11 @@
 
     <x-form.form-input label="Membership fee" name="membership_fee" placeholder="Enter membership fee" />
 
+    <x-form.form-select label="Committee Type" name="type" :options="[
+        'advisory_committee' => 'Advisory committee',
+        'executive_committee' => 'Executive committee',
+    ]"  />
+
     <x-slot name="sitecontent">
         <x-imginputshow name="photo" title="Member Image" size="2020 X 650px" />
 

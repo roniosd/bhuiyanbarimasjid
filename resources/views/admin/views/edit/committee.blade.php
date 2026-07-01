@@ -3,16 +3,18 @@
 
     <x-form.form-input label="Name" name="name" :value="$committee->name" placeholder="Enter Name" />
 
-    <x-form.form-input label="Designation" name="designation" :value="$committee->designation"
-        placeholder="Enter designation" />
+    <x-form.form-input label="Designation" name="designation" :value="$committee->designation" placeholder="Enter designation" />
 
-    <x-form.form-input label="Mobile number" name="mobile_number" :value="$committee->mobile_number"
-        placeholder="Enter mobile number" />
+    <x-form.form-input label="Mobile number" name="mobile_number" :value="$committee->mobile_number" placeholder="Enter mobile number" />
 
     <x-form.form-input label="Email" name="email" :value="$committee->email" placeholder="Enter email" />
 
     <x-form.form-input label="Membership fee" name="membership_fee" :value="$committee->membership_fee"
         placeholder="Enter membership fee" />
+    <x-form.form-select label="Committee Type" name="type" :options="[
+        'advisory_committee' => 'Advisory committee',
+        'executive_committee' => 'Executive committee',
+    ]" :value="$committee->type" />
 
     <x-slot name="sitecontent">
         <x-imginputshow name="photo" title="Member Image" size="2020 X 650px" :img="$committee->photo" />

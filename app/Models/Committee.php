@@ -15,6 +15,7 @@ class Committee extends Model
         'photo',
         'membership_fee',
         'status',
+        'type'
     ];
 
     public function getPhotoAttribute($value)

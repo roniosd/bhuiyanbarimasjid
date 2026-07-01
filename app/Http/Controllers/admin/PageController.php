@@ -58,7 +58,7 @@ class PageController extends Controller
         $files = [
             'title',
             'slug',
-            'member_type',
+            'type',
             'description',
             'excerpt',
             'status',
@@ -134,7 +134,7 @@ class PageController extends Controller
             'excerpt',
             'status',
             'post_id',
-            'member_type',
+            'type',
             'template',
             'widget'
         ];

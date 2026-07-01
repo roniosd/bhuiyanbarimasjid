@@ -37,6 +37,7 @@ class CommitteeController extends Controller
             'membership_fee' => 'nullable|numeric|min:0|max:9999999.99',
 
             'status' => 'required|in:published,unpublished',
+            'type' => 'nullable',
         ]);
     }
     /**

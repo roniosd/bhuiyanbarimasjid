@@ -1,5 +1,5 @@
 <x-FornAppLayout>
-    <section class="top_header text-center py-3">
+    <section class="top_header text-center">
         <p>{{ $pageDetails->title }}</p>
     </section>
 
@@ -37,7 +37,7 @@
                                     <tr>
                                         <td><strong>মোবাইল</strong></td>
                                         <td>
-                                            {{ substr($member->mobile, 0, 3) . '****' . substr($member->mobile, -4) }}
+                                            {{ substr($member->mobile, 0, 3) . '****' . substr($member->mobile, -2) }}
                                         </td>
                                     </tr>
                                     @if ($member->email)
@@ -51,13 +51,7 @@
                                 </table>
 
 
-                            </div>
-
-                            <div class="card-footer bg-white border-0 text-center">
-                                <small class="text-muted">
-                                    সদস্যের ধরন: {{ $member->member_type }}
-                                </small>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 @empty
