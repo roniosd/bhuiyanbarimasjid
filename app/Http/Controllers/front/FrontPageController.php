@@ -167,7 +167,7 @@ class FrontPageController extends Controller
             ->latest()
             ->paginate(9);
       }
-      if ($template === 'member') {
+      if ($template === 'committee') {
          $committees = Committee::where(['status' => 'published', 'type' => $pageDetails->type])
             ->oldest()->get();
       }
