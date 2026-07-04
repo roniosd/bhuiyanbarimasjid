@@ -18,33 +18,4 @@
         {{ old('note') }}
     </x-form.form-textarea>
 
-    <x-slot name="listItems">
-        <div class="container p-0">
-            <div class="table-responsive">
-                <table id="adminTable" class="table align-middle table-hover text-left table-striped">
-                    <thead>
-                        <tr>
-                            <th>Book No</th>
-                            <th>Date</th>
-                            <th>Collector</th>
-                            <th>Pages</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($donationBook as $book)
-                            <tr>
-                                <td>{{ $book->book_number }}</td>
-                                <td>{{ $book?->date }}</td>
-                                <td>{{ $book?->collector?->name }}</td>
-                                <td>{{ $book->total_pages }}</td>
-                                <x-admin.action-button id="{{ $book->id }}" show="donationBook.show"
-                                    edit="donationBook.edit" delete="donationBook.destroy" />
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </x-slot>
 </x-form.add-form>

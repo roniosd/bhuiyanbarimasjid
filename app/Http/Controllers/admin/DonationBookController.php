@@ -33,7 +33,17 @@ class DonationBookController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function index(Request $request)
+    {
+        $type = $request->query('type');
 
+        $donationBook = DonationBook::query()
+            ->when($type === 'open', fn($query) => $query->where('type', 'open'))
+            ->when($type === 'token', fn($query) => $query->where('type', 'like', 'token%'))
+            ->get();
+
+        return view('admin.views.list.donationBook', compact('donationBook'));
+    }
 
     /**
      * Show the form for creating a new resource.

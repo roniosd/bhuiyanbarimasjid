@@ -72,6 +72,10 @@
         {{-- Donation Book --}}
         <x-sidebar.dropdown id="donationBook" title="Donation Book" icon="bi-book">
             <x-sidebar.link href="{{ route('donationBook.create') }}" title="Add Book" icon="bi-file-earmark-plus" />
+            <x-sidebar.link href="{{ route('donationBook.index', ['type' => 'open']) }}" title="Open Book List"
+                icon="bi-journal-text" />
+            <x-sidebar.link href="{{ route('donationBook.index', ['type' => 'token']) }}" title="Token Book List"
+                icon="bi-journal-text" />
         </x-sidebar.dropdown>
 
         {{-- Activity --}}
