@@ -8,6 +8,7 @@
     'limit' => 100,
     'isDatatable' => true,
     'showHeader' => true,
+    'filter' => null,
 ])
 
 <div class="bg-white shadow-md border border-slate-300 rounded-xl">
@@ -19,6 +20,9 @@
     <div class="overflow-x-scroll mt-7 relative">
         <table id={{ $isDatatable ? 'adminTable' : '' }} data-datatable
             class="min-w-full table-auto text-sm text-gray-800 text-left border-collapse overflow-x-scroll">
+            @isset($filter)
+                <div class="pt-0 mt-0">{{ $filter }}</div>
+            @endisset
             <thead style="background-color: #216659;" class="text-xs uppercase text-white">
                 <tr>
                     @foreach ($columns as $column)

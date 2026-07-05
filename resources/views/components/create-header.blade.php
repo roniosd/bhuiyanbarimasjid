@@ -1,5 +1,5 @@
 @props(['title' => '', 'url' => null])
-<div class="flex items-center justify-between pb-4 mb-6">
+<div class="flex items-center flex-col lg:flex-row gap-5 justify-between pb-4 mb-6">
     <div class="flex items-center gap-3">
         <x-page-title>{{ $title }}</x-page-title>
 
@@ -17,7 +17,7 @@
         @if ($url)
             <x-button.link-button :url="$url">
                 <i class="bi bi-eye-fill"></i>
-                View All
+                View 
             </x-button.link-button>
         @endif
     </div>

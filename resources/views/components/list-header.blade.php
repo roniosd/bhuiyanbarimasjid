@@ -1,7 +1,7 @@
 @props(['title', 'url' => null, 'export' => null])
 <div class="flex flex-col sm:flex-row sm:items-center justify-between px-6 border-b py-2 border-gray-200">
 
-    <div class="flex w-full justify-between items-center">
+    <div class="flex w-full flex-col lg:flex-row gap-5 justify-between items-center">
         <x-page-title>{{ $title }}</x-page-title>
 
 

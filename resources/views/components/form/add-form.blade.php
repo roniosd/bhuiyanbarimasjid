@@ -3,7 +3,7 @@
     'url' => null,
     'url2' => '',
     'class' => 'col-span-3',
-    'mainClass' => 'grid-cols-4',
+    'mainClass' => 'lg:grid-cols-4',
     'title' => '',
     'seeall' => true,
     'button' => null,
@@ -23,18 +23,17 @@
 <x-app-layout :title="$title">
     <div>
         <form action="{{ $action }}" method="POST" enctype="multipart/form-data"
-            class="grid {{ $mainClass }} gap-5">
+            class="grid grid-cols-1 {{ $mainClass }} lg:gap-5 ">
             @csrf
             @if ($id)
                 @method('PUT')
             @endif
             <!-- Left Side: Form Fields -->
             <div class="{{ $class }}">
-                <div class="bg-white shadow-md rounded-2xl px-5 pt-3 pb-5 border border-slate-300">
+                <div class="bg-white shadow-md rounded-2xl px-2 lg:px-5 pt-3 pb-5 border border-slate-300">
                     <x-create-header :title="$title" :url="$url && $seeall ? $url . '.index' : null" />
 
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-6">
                         {{ $slot }}
                     </div>
                     @empty($sitecontent)
@@ -50,8 +49,8 @@
 
             <!-- Right Side: Profile Image & Status/Role -->
             @isset($sitecontent)
-                <div class="col-span-1">
-                    <div class="bg-white shadow-md rounded-2xl p-3 flex flex-col gap-4 border border-slate-300">
+                <div class="col-span-full lg:col-span-1">
+                    <div class="bg-white shadow-md rounded-2xl p-3 flex flex-col gap-4 border border-slate-300 w-full">
                         {{ $sitecontent }}
 
                         <div class="flex justify-center items-center mt-2">
