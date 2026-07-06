@@ -15,7 +15,7 @@ class CoaController extends Controller
     public function index()
     {
         if ($this->hasPermission()) {
-            $coas = Coa::with('parent')->latest('id')->paginate(10);
+            $coas = Coa::with('parent')->latest('id')->get();
             return view('admin.views.list.coaList', compact('coas'));
         } else {
             return back()->with('error', "Access denied. You are not authorized to perform this action.");

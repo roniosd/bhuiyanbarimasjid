@@ -4,7 +4,7 @@
     <x-form.form-select label="Type" name="type" :options="[
         '' => 'Choose one',
         'dr' => 'Dr. (আয়)',
-        'cr' => 'Cr. (ব্যায়)',
+        'cr' => 'Cr. (ব্যয়)',
     ]" required />
 
     <div class="col-span-1">

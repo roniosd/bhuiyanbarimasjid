@@ -1,8 +1,8 @@
 <x-form.add-form title="Edit COA" url="coa" button="Update COA" :id="$coa->id">
     <x-form.form-select label="Type" name="type" :value="$coa->type" :options="[
         '' => 'Choose one',
-        'dr' => 'Dr.',
-        'cr' => 'Cr.',
+        'dr' => 'Dr. (আয়)',
+        'cr' => 'Cr. (ব্যয়)',
     ]" required />
 
     <x-form.form-input label="Head" name="head" :value="$coa->head" placeholder="Enter Head" required />

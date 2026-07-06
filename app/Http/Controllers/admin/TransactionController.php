@@ -16,7 +16,7 @@ class TransactionController extends Controller
     public function index()
     {
         if ($this->hasPermission()) {
-            $transactions = Transaction::with('head')->latest('id')->paginate(10);
+            $transactions = Transaction::with('head')->latest('id')->get();
             return view('admin.views.list.transactionList', compact('transactions'));
         } else {
             return back()->with('error', "Access denied. You are not authorized to perform this action.");
