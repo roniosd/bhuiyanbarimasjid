@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\AdminloginController;
 use App\Http\Controllers\admin\AlbumController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\CoaController;
 use App\Http\Controllers\admin\CollectorController;
 use App\Http\Controllers\admin\CommitteeController;
 use App\Http\Controllers\admin\DashboardController;
@@ -29,6 +30,7 @@ use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\SliderController;
 use App\Http\Controllers\admin\StudentController;
 use App\Http\Controllers\admin\SubscribersController;
+use App\Http\Controllers\admin\TransactionController;
 use App\Http\Controllers\PdfController;
 use App\Models\Media;
 use Illuminate\Support\Facades\Route;
@@ -88,6 +90,12 @@ Route::middleware(['auth:admin'])->group(function () {
 
     //! Fund Controller
     Route::resource('fund', FundController::class);
+
+    //! COA Controller
+    Route::resource('coa', CoaController::class);
+
+    //! Transaction Controller
+    Route::resource('transaction', TransactionController::class);
 
     //! Session Controller
     Route::resource('session', SessionYearController::class);

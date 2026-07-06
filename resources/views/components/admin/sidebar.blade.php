@@ -4,18 +4,18 @@
         $openItem = collect([
             'post.*' => 'post',
             'slider.*' => 'slider',
-            'session.*' => 'session',
             'committee.*' => 'committee',
             'collector.*' => 'collector',
             'event.*' => 'event',
             'donationBook.*' => 'donationBook',
             'allactivity.*' => 'allactivity',
             'member.*' => 'member',
-            'student.*' => 'student',
             'category.*' => 'category',
             'media.*' => 'media',
             'album.*' => 'album',
             'fund.*' => 'fund',
+            'coa.*' => 'account',
+            'transaction.*' => 'transaction',
             'page.*' => 'page',
             'siteSetting' => 'setting',
             'homepageSetting' => 'setting',
@@ -46,11 +46,7 @@
             <x-sidebar.link href="{{ route('slider.index') }}" title="Slider List" icon="bi-journal-text" />
         </x-sidebar.dropdown>
 
-        {{-- Session --}}
-        <x-sidebar.dropdown id="session" title="Session" icon="bi-graph-up-arrow">
-            <x-sidebar.link href="{{ route('session.create') }}" title="Add Session" icon="bi-file-earmark-plus" />
-        </x-sidebar.dropdown>
-
+ 
         {{-- Committee --}}
         <x-sidebar.dropdown id="committee" title="Committee" icon="bi-people">
             <x-sidebar.link href="{{ route('committee.create') }}" title="Add Committee" icon="bi-file-earmark-plus" />
@@ -90,10 +86,7 @@
             <x-sidebar.link href="{{ route('member.index') }}" title="Member List" icon="bi-journal-text" />
         </x-sidebar.dropdown>
 
-        {{-- Student --}}
-        <x-sidebar.dropdown id="student" title="Student" icon="bi-person">
-            <x-sidebar.link href="{{ route('student.index') }}" title="Student List" icon="bi-journal-text" />
-        </x-sidebar.dropdown>
+     
 
         {{-- Category --}}
         <x-sidebar.dropdown id="category" title="Category" icon="bi-folder">
@@ -120,6 +113,20 @@
         <x-sidebar.dropdown id="fund" title="Donation" icon="bi-currency-dollar">
             <x-sidebar.link href="{{ route('fund.create') }}" title="Create Donation" icon="bi-file-earmark-plus" />
             <x-sidebar.link href="{{ route('fund.index') }}" title="Donation List" icon="bi-journal-text" />
+        </x-sidebar.dropdown>
+
+        {{-- Account --}}
+        <x-sidebar.dropdown id="account" title="Account" icon="bi-cash-stack">
+            <x-sidebar.link href="{{ route('coa.create') }}" title="Add COA" icon="bi-file-earmark-plus" />
+            <x-sidebar.link href="{{ route('coa.index') }}" title="COA List" icon="bi-journal-text" />
+        </x-sidebar.dropdown>
+
+        <x-sidebar.dropdown id="transaction" title="Transaction" icon="bi-journal-text">
+
+            <x-sidebar.link href="{{ route('transaction.create') }}" title="Add Transaction"
+                icon="bi-file-earmark-plus" />
+            <x-sidebar.link href="{{ route('transaction.index') }}" title="Transaction List"
+                icon="bi-journal-text" />
         </x-sidebar.dropdown>
 
         {{-- Page --}}
