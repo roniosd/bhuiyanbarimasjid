@@ -62,9 +62,7 @@ class MemberController extends Controller
         }
 
         foreach ($members as $member) {
-            $firstName = !empty($isCommit ? $member->name : $member->full_name)
-                ? explode(' ', trim($isCommit ? $member->name : $member->full_name))[0]
-                : 'সদস্য';
+            $firstName = !empty($isCommit ? $member->name : $member->full_name) ? ($isCommit ? $member->name : $member->full_name) : 'সদস্য';
 
             $message = "প্রিয় {$firstName}, " . trim($data['message']) . " ধন্যবাদান্তে BBBMJM";
 
