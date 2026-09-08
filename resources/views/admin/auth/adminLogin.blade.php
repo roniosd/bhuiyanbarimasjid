@@ -1,7 +1,7 @@
 <x-base-layout>
     <div class="overflow-hidden">
 
-        <div class="flex items-center justify-center min-h-[80vh] px-6">
+        <div class="flex items-center justify-center min-h-screen pt-33 px-6">
             <div class="bg-white rounded-3xl shadow-xl p-5 border border-gray-100 w-xl">
 
                 <div class="text-center mb-8">

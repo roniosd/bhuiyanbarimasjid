@@ -1,7 +1,7 @@
 <x-base-layout title="Login">
     <div class="overflow-hidden">
 
-        <div class="flex items-center justify-center min-h-[80vh] px-6">
+        <div class="flex items-center justify-center min-h-[80vh] px-6 ">
           
 
             <!-- Session Status -->
