@@ -134,7 +134,11 @@ Route::middleware(['auth:admin'])->group(function () {
 
     //! Member Controller
     Route::resource('member', MemberController::class);
+    Route::get('sendsms', [MemberController::class, 'showsendSms'])->name('sendsms.create');
+    Route::post('makesendsms', [MemberController::class, 'sendSms'])->name('sendsms.store');
+    Route::get('sendsms/members', [MemberController::class, 'getMembersByType'])->name('sendsms.members');
 
+    
     //! Student Controller
     Route::resource('student', StudentController::class);
 

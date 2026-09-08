@@ -6,6 +6,7 @@ use App\AccessTrait;
 use App\FileHandlerTrait;
 use App\Http\Controllers\Controller;
 use App\Models\Member;
+use App\Services\SmsService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,6 +21,55 @@ class MemberController extends Controller
     {
         $members = Member::all();
         return view('admin.views.list.memberList', compact('members'));
+    }
+
+    public function showsendSms(Request $request)
+    {
+        $members = collect();
+
+        if ($request->member_type) {
+            $members = Member::where('member_type', $request->member_type)->get();
+        }
+
+        return view('admin.views.create.sendSms', compact('members'));
+    }
+
+    public function getMembersByType(Request $request)
+    {
+        $members = Member::where('member_type', $request->member_type)
+            ->whereNotNull('mobile')
+            ->select('id', 'full_name', 'mobile')
+            ->orderBy('full_name')
+            ->get();
+
+        return response()->json($members);
+    }
+    public function sendSms(Request $request, SmsService $smsService)
+    {
+        $data = $request->validate([
+            'message' => ['required', 'string'],
+            'members' => ['required', 'array', 'min:1'],
+            'members.*' => ['exists:members,id'],
+        ]);
+
+        $members = Member::whereIn('id', $data['members'])
+            ->whereNotNull('mobile')
+            ->get();
+
+        foreach ($members as $member) {
+            $firstName = !empty($member->full_name)
+                ? explode(' ', trim($member->full_name))[0]
+                : 'সদস্য';
+
+            $message = "প্রিয় {$firstName}, " . trim($data['message']) . " ধন্যবাদান্তে BBBMJM";
+
+            $smsService->sendMessage($member->mobile, $message);
+        }
+
+        return back()->with(
+            'success',
+            $members->count() . ' টি SMS সফলভাবে পাঠানো হয়েছে।'
+        );
     }
 
     /**

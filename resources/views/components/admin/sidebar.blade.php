@@ -46,7 +46,7 @@
             <x-sidebar.link href="{{ route('slider.index') }}" title="Slider List" icon="bi-journal-text" />
         </x-sidebar.dropdown>
 
- 
+
         {{-- Committee --}}
         <x-sidebar.dropdown id="committee" title="Committee" icon="bi-people">
             <x-sidebar.link href="{{ route('committee.create') }}" title="Add Committee" icon="bi-file-earmark-plus" />
@@ -84,9 +84,10 @@
         {{-- Member --}}
         <x-sidebar.dropdown id="member" title="Member" icon="bi-person">
             <x-sidebar.link href="{{ route('member.index') }}" title="Member List" icon="bi-journal-text" />
+            <x-sidebar.link href="{{ route('sendsms.create') }}" title="Send SMS" icon="bi-journal-text" />
         </x-sidebar.dropdown>
 
-     
+
 
         {{-- Category --}}
         <x-sidebar.dropdown id="category" title="Category" icon="bi-folder">

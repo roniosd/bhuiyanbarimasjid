@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>BBBMJM | {{ $title }}</title>
+    <title>
+        ইসলামী নব জাগরণ সংগঠন | {{ $title }}</title>
     <link rel="icon" href="{{ $setting->favicon }}">
 
     <!-- Fonts & Icons -->
@@ -47,7 +48,7 @@
     <footer class="w-full border-t border-gray-200 py-4 text-center text-sm text-gray-600 mt-5">
         <p>
             Copyright &copy; {{ date('Y') }}
-            <span class="font-semibold text-black">BBBMJM</span>.
+            <span class="font-semibold text-black">Bhuiyan Bari Baytul Mamur Jame Masjid</span>.
             All rights reserved.
         </p>
     </footer>
