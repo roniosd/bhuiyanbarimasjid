@@ -57,7 +57,7 @@ class MemberController extends Controller
             ->get();
         if ($isCommit) {
             $members = Committee::whereIn('id', $data['members'])
-                ->whereNotNull('mobile')
+                ->whereNotNull('mobile_number')
                 ->get();
         }
 
