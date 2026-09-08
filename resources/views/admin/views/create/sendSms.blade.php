@@ -2,6 +2,7 @@
 
         <x-form.form-select label="সদস্য ধরন" name="member_type" :options="[
             '' => 'Select One',
+            'committee' => 'কমিটি মেম্বার',
             'social' => 'সামাজিক সদস্য',
             'general' => 'সাধারণ সদস্য',
             'premium' => 'দাতা সদস্য',
@@ -99,7 +100,7 @@
                     }
 
                     memberList.innerHTML = members.map(member => `
-                   <div class="border rounded p-2 mb-2"> <div class="form-check"> <input class="form-check-input member-checkbox" type="checkbox" name="members[]" value="${member.id}" id="member_${member.id}" > <label class="form-check-label w-100" for="member_${member.id}" > <div class="fw-semibold"> ${escapeHtml(member.full_name || 'সদস্য')} </div> <small class="text-muted"> ${escapeHtml(member.mobile  || '')} </small> </label> </div> </div>
+                   <div class="border rounded p-2 mb-2"> <div class="form-check"> <input class="form-check-input member-checkbox" type="checkbox" name="members[]" value="${member.id}" id="member_${member.id}" > <label class="form-check-label w-100" for="member_${member.id}" > <div class="fw-semibold"> ${escapeHtml(member.full_name || member.name || 'সদস্য')} </div> <small class="text-muted"> ${escapeHtml(member.mobile  || member.mobile_number || '')} </small> </label> </div> </div>
                 `).join('');
 
                     addCheckboxListeners();

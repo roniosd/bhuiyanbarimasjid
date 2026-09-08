@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\AccessTrait;
 use App\FileHandlerTrait;
 use App\Http\Controllers\Controller;
+use App\Models\Committee;
 use App\Models\Member;
 use App\Services\SmsService;
 use Illuminate\Http\Request;
@@ -23,24 +24,22 @@ class MemberController extends Controller
         return view('admin.views.list.memberList', compact('members'));
     }
 
-    public function showsendSms(Request $request)
+    public function showsendSms()
     {
-        $members = collect();
-
-        if ($request->member_type) {
-            $members = Member::where('member_type', $request->member_type)->get();
-        }
-
-        return view('admin.views.create.sendSms', compact('members'));
+        return view('admin.views.create.sendSms');
     }
 
     public function getMembersByType(Request $request)
     {
-        $members = Member::where('member_type', $request->member_type)
-            ->whereNotNull('mobile')
-            ->select('id', 'full_name', 'mobile')
-            ->orderBy('full_name')
-            ->get();
+        $members = [];
+        if ($request->member_type === 'committee') {
+            $members = Committee::select('id', 'name', 'mobile_number')->get();
+        } else
+            $members = Member::where('member_type', $request->member_type)
+                ->whereNotNull('mobile')
+                ->select('id', 'full_name', 'mobile')
+                ->orderBy('full_name')
+                ->get();
 
         return response()->json($members);
     }
@@ -48,22 +47,28 @@ class MemberController extends Controller
     {
         $data = $request->validate([
             'message' => ['required', 'string'],
+            'member_type' => ['required', 'string'],
             'members' => ['required', 'array', 'min:1'],
             'members.*' => ['exists:members,id'],
         ]);
-
+        $isCommit = $data['member_type'] === 'committee';
         $members = Member::whereIn('id', $data['members'])
             ->whereNotNull('mobile')
             ->get();
+        if ($isCommit) {
+            $members = Committee::whereIn('id', $data['members'])
+                ->whereNotNull('mobile')
+                ->get();
+        }
 
         foreach ($members as $member) {
-            $firstName = !empty($member->full_name)
-                ? explode(' ', trim($member->full_name))[0]
+            $firstName = !empty($isCommit ? $member->name : $member->full_name)
+                ? explode(' ', trim($isCommit ? $member->name : $member->full_name))[0]
                 : 'সদস্য';
 
             $message = "প্রিয় {$firstName}, " . trim($data['message']) . " ধন্যবাদান্তে BBBMJM";
 
-            $smsService->sendMessage($member->mobile, $message);
+            $smsService->sendMessage($isCommit ? $member->mobile_number : $member->mobile, $message);
         }
 
         return back()->with(
