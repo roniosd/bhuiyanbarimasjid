@@ -84,9 +84,9 @@
         {{-- Member --}}
         <x-sidebar.dropdown id="member" title="Member" icon="bi-person">
             <x-sidebar.link href="{{ route('member.index') }}" title="Member List" icon="bi-journal-text" />
-            <x-sidebar.link href="{{ route('sendsms.create') }}" title="Send SMS" icon="bi-journal-text" />
         </x-sidebar.dropdown>
-
+        
+        <x-sidebar.link href="{{ route('sendsms.create') }}" title="Send SMS" icon="bi-journal-text" />
 
 
         {{-- Category --}}
