@@ -48,8 +48,7 @@ class MemberController extends Controller
         $data = $request->validate([
             'message' => ['required', 'string'],
             'member_type' => ['required', 'string'],
-            'members' => ['required', 'array', 'min:1'],
-            'members.*' => ['exists:members,id'],
+            'members' => ['required', 'array', 'min:1']
         ]);
         $isCommit = $data['member_type'] === 'committee';
         $members = Member::whereIn('id', $data['members'])
