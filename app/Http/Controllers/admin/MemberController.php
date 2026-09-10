@@ -63,7 +63,7 @@ class MemberController extends Controller
         foreach ($members as $member) {
             $firstName = !empty($isCommit ? $member->name : $member->full_name) ? ($isCommit ? $member->name : $member->full_name) : 'সদস্য';
 
-            $message = "প্রিয় {$firstName}, " . trim($data['message']) . " ধন্যবাদান্তে BBBMJM";
+            $message = "প্রিয় {$firstName}, " . trim($data['message']);
 
             $smsService->sendMessage($isCommit ? $member->mobile_number : $member->mobile, $message);
         }
