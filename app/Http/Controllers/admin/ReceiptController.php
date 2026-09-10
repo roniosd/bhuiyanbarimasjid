@@ -70,8 +70,7 @@ class ReceiptController extends Controller
 
         if (isset($data['mobile_number'])) {
             $message = "প্রিয় " . ($data['donor_name'] ?? 'সদস্য') . ", "
-                . "আপনি ভূঁইয়া বাড়ি বায়তুল মামুর জামে মসজিদে {$data['type']} খাতে {$data['amount']} টাকা অনুদান প্রদান করেছেন। "
-                . "ধন্যবাদান্তে BBBMJM";
+                . "আপনি ভূঁইয়া বাড়ি বায়তুল মামুর জামে মসজিদে {$data['type']} খাতে {$data['amount']} টাকা অনুদান প্রদান করেছেন। ";
             $smsService->sendMessage($data['mobile_number'], $message);
         }
 

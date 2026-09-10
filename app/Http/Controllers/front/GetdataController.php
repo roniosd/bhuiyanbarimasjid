@@ -114,8 +114,7 @@ class GetdataController extends Controller
 
         $message = "প্রিয় " . ($validatedMember['full_name'] ?? 'সদস্য') . ", "
             . "আপনাকে সামাজিক সদস্য হিসেবে নিবন্ধিত করা হয়েছে। "
-            . "সামাজিক চাঁদার পরিমাণ {$validatedMember['donation_amount']} টাকা। ধন্যবাদ। "
-            . "BBBMJM";
+            . "সামাজিক চাঁদার পরিমাণ {$validatedMember['donation_amount']} টাকা। ধন্যবাদ।";
 
         if ($validatedMember['member_type'] === 'social' && $validatedMember['mobile']) {
             $smsService->sendMessage($validatedMember['mobile'], $message);
